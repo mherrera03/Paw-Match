@@ -1,0 +1,124 @@
+body {
+    font-family: cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #eaeaea;
+    margin: 0;
+}
+
+.login-container {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    width: 300px;
+    height: 230px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    margin-bottom: 8px;
+    margin-top: 0px;
+    color: #62cee1;
+}
+
+.login-icon {
+    width: 40px; /* Puedes ajustar el tamaño de la imagen */
+    height: auto;
+    margin-bottom: 4px; /* Espacio entre la imagen y el formulario */
+}
+
+input {
+    font-family: cursive;
+    width: 300px;
+    height: 50px;
+    padding: 10px 20px;
+    margin: 12px 0;
+    border: 2px solid #bbb;
+    border-radius: 10px;
+    display: block;
+    font-size: 20px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease-in-out;
+}
+
+input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background: #62cee1;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background: #b10582 ;
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    input {
+        width: 90%;
+        font-size: 18px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .login-icon {
+        width: 30px; /* Ajuste para pantallas pequeñas */
+    }
+}
+contact-image img {
+    width: 100%;
+    max-width: 100px; /* Ajusta el tamaño según necesidad */
+    border-radius: 8px;
+}
+.contact-image img {
+    max-width: 450px;
+}
+
+.contact-section {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espacio entre la imagen y el formulario */
+}
+.contact-container {
+    max-width: 500px;
+    padding: 40px;
+    background-color: #efefef;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 60px;
+}
+input {
+    width: 90%;
+    max-width: 280px; /* Para que no sean más anchos que el contenedor */
+    height: 40px;
+    margin-left: 12px;
+}
+button {
+    width: 90%;
+    max-width: 280px;
+    height: 40px;
+}
