@@ -3,46 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="login.css">
+    <title>Paw Match</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="favicon.ico">
+
+
 </head>
 <body>
-    <div class="contact-section">
-        <div class="contact-image">
-            <img src="conta.jpg" alt="Imagen de contacto">
+
+    <header>
+        <h1>Paw Match</h1>
+        <nav>
+            <ul>
+                <li><a href="pawmatch.html">Acerca</a></li>
+                <li><a href="carac.html">Características</a></li>
+                <li><a href="login.html">Inicir Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <section class="contenido">
+        <div class="info">
+            <div class="texto">
+                <h2>¿Quiénes son Paw Match?</h2>
+                <p>PawMatch es una plataforma que busca transformar el proceso de adopción de mascotas mediante la colaboración con albergues y rescatistas. Su objetivo principal es conectar a personas interesadas en adoptar con refugios y cuidadores, ofreciendo una plataforma intuitiva y eficiente que facilite la gestión de adopciones, brinde información detallada sobre cada mascota y agilice la comunicación entre adoptantes y responsables de los albergues.</p>
+            </div>
+            <div class="imagen">
+                <img src="logo.png" alt="Logo Paw Match" class="logo">
+            </div>
         </div>
-    <div class="login-container">
-        <h2>Iniciar Sesión</h2>
-        <img src="https://static.vecteezy.com/system/resources/thumbnails/014/550/624/small_2x/dog-and-cat-paws-with-sharp-claws-cute-animal-footprints-png.png" 
-             alt="Login Icon" class="login-icon">
-        <form onsubmit="return validateLogin(event)">
-            <input type="text" id="username" placeholder="Usuario" required>
-            <input type="password" id="password" placeholder="Contraseña" required>
-            <button type="submit">Entrar</button>
-            <p id="error-msg"></p>
-        </form>
-    </div>
+    </section>
 
-    <script>
-        function validateLogin(event) {
-            event.preventDefault(); 
+    <footer>
+        <div class="footer-info">
+            <p>Mariana Herrera - Líder | marianah7872@gmail.com</p>
+            <p>Diego Valencia - Desarrollador | dialvalport@gmail.com</p>
+            <p>Edwin Bonilla - Desarrollador | renegonzalezb9@gmail.com</p>
+        </div>
+    <p> 🐱2024 Paw Match. Todos los derechos reservados.</p>
+</footer>
 
-            const user = document.getElementById("username").value.trim();
-            const pass = document.getElementById("password").value.trim();
-            const errorMsg = document.getElementById("error-msg");
 
-            
-            const USERNAME = "admin";
-            const PASSWORD = "12345";
-
-            if (user === USERNAME && pass === PASSWORD) {
-                window.location.href = "pawmatch.html"; 
-            } else {
-                errorMsg.textContent = "Usuario o contraseña incorrectos";
-                errorMsg.style.color = "red";
-            }
-        }
-    </script>
 </body>
 </html>
