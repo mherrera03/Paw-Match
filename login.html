@@ -32,24 +32,24 @@
         const pass = document.getElementById("password").value.trim();
         const errorMsg = document.getElementById("error-msg");
 
-        console.log("Usuario ingresado:", user);
-        console.log("Contraseña ingresada:", pass);
+        errorMsg.innerHTML = `Usuario ingresado: ${user} <br> Contraseña ingresada: ${pass}`;
+        errorMsg.style.color = "blue";
 
-      
         const users = {
             "admin": "12345",
-            "Armando": "UGB2025"
+            "Armando": "ugb2025"
         };
 
+        console.log("Usuario ingresado:", user);
+        console.log("Contraseña ingresada:", pass);
         console.log("Usuario en la base de datos:", users[user]);
 
-    
         if (users[user] && users[user] === pass) {
             console.log("Login exitoso, redirigiendo...");
             window.location.replace("pawmatch.html");
         } else {
             console.log("Error: Usuario o contraseña incorrectos");
-            errorMsg.textContent = "Usuario o contraseña incorrectos";
+            errorMsg.innerHTML += "<br> Usuario o contraseña incorrectos";
             errorMsg.style.color = "red";
         }
     });
