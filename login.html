@@ -24,28 +24,36 @@
             </form>
         </div>
     </div>
+<script>
+    document.getElementById("login-form").addEventListener("submit", function(event) {
+        event.preventDefault(); 
 
-    <script>
-        document.getElementById("login-form").addEventListener("submit", function(event) {
-            event.preventDefault(); 
+        const user = document.getElementById("username").value.trim();
+        const pass = document.getElementById("password").value.trim();
+        const errorMsg = document.getElementById("error-msg");
 
-            const user = document.getElementById("username").value.trim();
-            const pass = document.getElementById("password").value.trim();
-            const errorMsg = document.getElementById("error-msg");
+        console.log("Usuario ingresado:", user);
+        console.log("Contraseña ingresada:", pass);
 
-            const users = {
-                "admin": "12345",
-                "Armando": "UGB2025"
-            };
+      
+        const users = {
+            "admin": "12345",
+            "Armando": "UGB2025"
+        };
 
-            
-            if (users[user] && users[user] === pass) {
-                window.location.replace("pawmatch.html"); 
-            } else {
-                errorMsg.textContent = "Usuario o contraseña incorrectos";
-                errorMsg.style.color = "red";
-            }
-        });
-    </script>
+        console.log("Usuario en la base de datos:", users[user]);
+
+    
+        if (users[user] && users[user] === pass) {
+            console.log("Login exitoso, redirigiendo...");
+            window.location.replace("pawmatch.html");
+        } else {
+            console.log("Error: Usuario o contraseña incorrectos");
+            errorMsg.textContent = "Usuario o contraseña incorrectos";
+            errorMsg.style.color = "red";
+        }
+    });
+</script>
+
 </body>
 </html>
