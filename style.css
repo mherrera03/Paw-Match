@@ -212,3 +212,8 @@ p {
     gap: 10px;
     justify-content: center;
 }
+.botonera {
+    display: flex;
+    gap: 10px; 
+    justify-content: center; 
+}
