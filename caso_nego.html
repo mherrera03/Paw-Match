@@ -104,31 +104,32 @@
             font-weight: bold;
         }
         .back-button {
-        display: flex;
-        justify-content: center;
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        padding: 10px 20px;
-        cursor: pointer;
-        background: #ddd;
-        border-radius: 5px;
-        transition: 0.3s;
-        }
-
-        .back-button:hover {
-            background: #c380f2;
-            color: white;
-            cursor: pointer;
-            padding: 10px;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
+         display: flex;
+         justify-content: center;
+         position: absolute;
+         top: 10px;
+         left: 10px;
+         padding: 10px 20px;
+         cursor: pointer;
+         background: #ddd;
+         border-radius: 5px;
+         transition: 0.3s;
+         }
+ 
+         .back-button:hover {
+             background: #c380f2;
+             color: white;
+             cursor: pointer;
+             padding: 10px;
+             border-radius: 5px;
+             transition: 0.3s;
+         }
     </style>
 </head>
 <body>
 
     <header>
+
         <div  class="back-button" onclick="redirigir()">🐈 Volver</div>
         <h2>CASO DE NEGOCIO</h2>
         <h3>IMPLEMENTACIÓN DE GUARDERÍA AUTOMATIZADA DE MASCOTAS PARA LA ORGANIZACIÓN "ÉCHAME UNA PATA", SAN MIGUEL</h3>
@@ -144,6 +145,7 @@
         <div class="tab" onclick="showTab(4)">Parte 5</div>
     </div>
 
+    <!-- Contenido de las partes -->
     <div class="content active" id="content-0">
         <h3>Parte 1</h3>
         <div class="subsection">
@@ -421,7 +423,7 @@
             <div class="subcontent">
                 <p>Los factores críticos de éxito incluyen:</p>
                 <ul>
-                   <p>🐕‍🦺Colaboración estrecha con refugios y albergues.</p>
+                    <p>🐕‍🦺Colaboración estrecha con refugios y albergues.</p>
                     <p>🐕‍🦺Desarrollo de una aplicación fácil de usar y accesible.</p>
                     <p>🐕‍🦺Concienciación y educación sobre la adopción responsable.</p>
                     <p>🐕‍🦺Gestión y desarrollo eficaz de cada fase del proyecto, desde la planificación hasta la implementación y mantenimiento.</p>
@@ -519,13 +521,11 @@
     <div class="content" id="content-3">
         <h3>Parte 4</h3>
         <div class="subsection">
-            <div class="subsection-title" onclick="toggleSubsection(15)">4. Recomendación</div>
-            <div class="subcontent">
-                <p></p>
-            </div>
+            <div class="subsection-title" >4. Recomendación</div>
+            
         </div>
         <div class="subsection">
-            <div class="subsection-title" onclick="toggleSubsection(16)">4.1 Enunciado</div>
+            <div class="subsection-title" onclick="toggleSubsection(15)">4.1 Enunciado</div>
             <div class="subcontent">
                 <p><strong>Resultado del Análisis</strong></p>
                 <p>El proyecto tiene como objetivo principal mejorar las condiciones de vida de las mascotas en situación de vulnerabilidad mediante la implementación de una guardería automatizada y una plataforma digital que facilite la adopción y el rescate de animales.</p>
@@ -678,10 +678,16 @@
                         </tr>
                     </table>
                 </div>
+                <p>Evaluación Financiera - Modelos Económicos para la Selección de Proyectos</p>
+                <p>🐈‍⬛Valor Actual Neto (NVP): Se selecciona el Proyecto con mejor NVP</p>
+                <p>🐈‍⬛Retorno de la Inversión (ROI) / Rentabilidad del proyecto: ROI = Ingresos / Costos del Proyecto</p>
+                <p>🐈‍⬛Tasa Interna de Retorno (IRR): Se selecciona el proyecto con el retorno más alto</p>
+                <p>🐈‍⬛Plazo de Retorno de la Inversión (PBP) / Período de Reembolso: Se selecciona el proyecto con un período más corto</p>
+                <p>🐈‍⬛Relación Costo Beneficio (BCR): > 1 los beneficios son más altos que los costos</p>
             </div>
         </div>
         <div class="subsection">
-            <div class="subsection-title" onclick="toggleSubsection(17)">4.2 Enfoque de implementación</div>
+            <div class="subsection-title" onclick="toggleSubsection(16)">4.2 Enfoque de implementación</div>
             <div class="subcontent">
                 <p>El enfoque de implementación incluye:</p>
                 <p><strong>Hitos y Dependencias</strong></p>
@@ -765,7 +771,7 @@
     <div class="content" id="content-4">
         <h3>Parte 5</h3>
         <div class="subsection">
-            <div class="subsection-title" onclick="toggleSubsection(18)">5. Evaluación</div>
+            <div class="subsection-title" onclick="toggleSubsection(17)">5. Evaluación</div>
             <div class="subcontent">
                 <p>El beneficio se medirá en términos del logro de los objetivos del proyecto planteados:</p>
                 <div class="info-table">
@@ -818,16 +824,13 @@
                 contents[i].classList.toggle('active', i === index);
             });
         }
-
+        function redirigir() {
+             window.location.href = "pawmatch.html";
+         }
         function toggleSubsection(index) {
             let subcontent = document.querySelectorAll('.subcontent')[index];
             subcontent.style.display = subcontent.style.display === "block" ? "none" : "block";
         }
-
-        function redirigir() {
-            window.location.href = "pawmatch.html";
-        }
-
     </script>
 
 </body>
