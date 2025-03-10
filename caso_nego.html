@@ -103,11 +103,33 @@
         .info-table strong {
             font-weight: bold;
         }
+        .back-button {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        padding: 10px 20px;
+        cursor: pointer;
+        background: #ddd;
+        border-radius: 5px;
+        transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: #c380f2;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
     </style>
 </head>
 <body>
 
     <header>
+        <div  class="back-button" onclick="redirigir()">🐈 Volver</div>
         <h2>CASO DE NEGOCIO</h2>
         <h3>IMPLEMENTACIÓN DE GUARDERÍA AUTOMATIZADA DE MASCOTAS PARA LA ORGANIZACIÓN "ÉCHAME UNA PATA", SAN MIGUEL</h3>
         <h3>PROYECTO DESARROLLADO POR PAW MATCH</h3>
@@ -801,6 +823,11 @@
             let subcontent = document.querySelectorAll('.subcontent')[index];
             subcontent.style.display = subcontent.style.display === "block" ? "none" : "block";
         }
+
+        function redirigir() {
+            window.location.href = "pawmatch.html";
+        }
+
     </script>
 
 </body>
