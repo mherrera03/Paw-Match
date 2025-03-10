@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caso de Negocio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;  
+            position: relative;
+            padding: 10px 20px;
+            text-align: center;
+            margin-bottom: 20px; 
+        }
+        h3 {
+            margin: 3px 0;
+            text-align: center;
+            padding: 0 10px; 
+        }
+        .logo {
+            width: 100px; 
+            height: auto;
+            position: absolute;
+            right: 30px;
+            bottom: 90px;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background: #ddd;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .tab:hover, .tab.active {
+            background: #c380f2;
+            color: white;
+        }
+        .content {
+            display: none;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .content.active {
+            display: block;
+        }
+        .subsection {
+            margin-top: 10px;
+            text-align: left;
+        }
+        .subsection-title {
+            cursor: pointer;
+            background: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .subsection-title:hover {
+            background: #c380f2;
+        }
+        .subcontent {
+            display: none;
+            padding: 10px;
+            border-left: 3px solid #c380f2;
+            margin-top: 5px;
+            text-align: justify;
+        }
+        h2 {
+            color: #c380f2;
+        }
+        .info-table {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .info-table table {
+            width: 80%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .info-table td {
+            border: 2px solid #c380f2;
+            padding: 10px;
+            text-align: left;
+        }
+        .info-table strong {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h2>CASO DE NEGOCIO</h2>
+        <h3>IMPLEMENTACIÓN DE GUARDERÍA AUTOMATIZADA DE MASCOTAS PARA LA ORGANIZACIÓN "ÉCHAME UNA PATA", SAN MIGUEL</h3>
+        <h3>PROYECTO DESARROLLADO POR PAW MATCH</h3>
+        <img src="logo.png" alt="Logo Paw Match" class="logo">
+    </header>
+
+    <div class="tabs">
+        <div class="tab active" onclick="showTab(0)">Parte 1</div>
+        <div class="tab" onclick="showTab(1)">Parte 2</div>
+        <div class="tab" onclick="showTab(2)">Parte 3</div>
+        <div class="tab" onclick="showTab(3)">Parte 4</div>
+        <div class="tab" onclick="showTab(4)">Parte 5</div>
+    </div>
+
+    <!-- Contenido de las partes -->
+    <div class="content active" id="content-0">
+        <h3>Parte 1</h3>
+        <div class="subsection">
+            <div class="subsection-title">Identificación del Proyecto</div>
+            <div class="info-table">
+                <table>
+                    <tr>
+                        <td colspan="2"><strong>Nombre del proyecto:</strong> Guardería automatizada de mascotas para la organización "Échame una pata", San Miguel</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><strong>Empresa que desarrolla el proyecto:</strong> Paw Match</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><strong>Nombre del representante legal:</strong> Mariana Herrera Márquez</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><strong>Dirección, teléfono, email:</strong> <br> San Carlos, Morazán <br> 7875-4222 <br> marianah7872@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fecha inicio:</strong> 20/01/2025</td>
+                        <td><strong>Fecha fin:</strong> 15/06/2025</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><strong>Cliente:</strong> Organización "Échame una pata"</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><strong>Patrocinador:</strong> Universidad Gerardo Barrios</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tipo de Proyecto</strong></td>
+                        <td>CAPEX ☑ OPEX ☐</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="subsection">
+            <div class="subsection-title" onclick="toggleSubsection(0)">1.1 Resumen Ejecutivo</div>
+            <div class="subcontent">
+                El presente documento es un sistema automatizado de guardería para mascotas, facilitando la búsqueda de mascotas perdidas y en adopción, mejorando la calidad de vida de los animales en situación de calle. Nuestra propuesta no solo conecta albergues y personas interesadas en la adopción, sino que también ofrece herramientas innovadoras para optimizar este proceso.
+                Nuestra base de clientes incluye albergues, rescatistas y cualquier persona interesada en la adopción o el rescate de mascotas. Tras un análisis de mercado, identificamos que las aplicaciones similares carecen de varias de estas funcionalidades, lo que nos otorga una ventaja competitiva significativa en el sector.
+                Este sistema no solo busca ser una plataforma de conexión, sino un ecosistema integral que aproveche la tecnología para transformar la vida de las mascotas y sus futuros dueños.
+            </div>
+        </div>
+    </div>
+
+    <div class="content" id="content-1">
+        <h3>Necesidades del Negocio</h3>
+        <div class="subsection">
+            <div class="subsection-title" onclick="toggleSubsection(1)">2.1 Justificación</div>
+            <div class="subcontent">
+                <p><strong>Motivación</strong></p>
+                <p>Nuestra motivación como equipo surge de la necesidad de brindar un apoyo integral a las mascotas que se encuentran en situaciones de vulnerabilidad, ya sea por abandono, maltrato o falta de recursos. Creemos firmemente que todos los animales merecen vivir en condiciones dignas, con acceso a alimentación adecuada, cuidados básicos y un entorno seguro que les permita desarrollarse física y emocionalmente. Además, buscamos ser un aliado estratégico para refugios y albergues, proporcionándoles herramientas y soluciones innovadoras que mejoren su capacidad de atención y optimicen el bienestar de las mascotas bajo su cuidado.</p>
+                <p>Uno de los principales desafíos que enfrentan las mascotas en situación de abandono o desamparo es la falta de condiciones básicas para su supervivencia y bienestar. Muchas de ellas viven en entornos hostiles, donde deben competir por alimento, refugio y seguridad, lo que genera estrés, enfermedades y, en muchos casos, la muerte. Los refugios y albergues, a pesar de su labor invaluable, suelen enfrentar limitaciones de recursos, espacio y personal, lo que dificulta su capacidad para ofrecer un ambiente óptimo a todas las mascotas rescatadas.</p>
+                <p>Nuestro proyecto busca abordar esta problemática mediante la creación de una guardería automatizada que garantice condiciones de vida dignas para las mascotas, optimizando los recursos disponibles y adaptándose a las necesidades específicas de cada mascota. Al implementar sistemas automatizados de alimentación, monitoreo y cuidado, no solo mejoraremos la calidad de vida de las mascotas, sino que también facilitaremos la labor de las organizaciones dedicadas a su protección, permitiéndoles enfocarse en su misión principal: rescatar, rehabilitar y reubicar a estos seres vulnerables.</p>
+                <p><strong>Métricas e indicadores de éxito</strong></p>
+                <p>🐕 Que alrededor de 40% de la población salvadoreña descargue nuestra aplicación.</p>
+                <p>🐈 La cantidad de albergues se duplique o que aumente un 50%</p>
+                <p>🐕 Disminuir la cantidad de mascotas sin hogar en un 60%</p>
+                <p>🐈 Aumentar el número de hogares con mascota en un 30%</p>
+            </div>
+        </div>
+        <div class="subsection">
+            <div class="subsection-title" onclick="toggleSubsection(2)">2.2 Interesados Afectados</div>
+            <div class="subcontent">
+                <div class="info-table">
+                    <table>
+                        <tr>
+                            <td><strong>Nombre</strong></td>
+                            <td><strong>Departamento</strong></td>
+                            <td><strong>Cargo</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Mariana Herrera Márquez</td>
+                            <td>Equipo de Desarrollo</td>
+                            <td>Líder del proyecto</td>
+                        </tr>
+                        <tr>
+                            <td>Diego Alejandro Rodríguez Valencia</td>
+                            <td>Equipo de Desarrollo</td>
+                            <td>Desarrollo Backend</td>
+                        </tr>
+                        <tr>
+                            <td>Edwin René González Bonilla</td>
+                            <td>Equipo de Desarrollo</td>
+                            <td>Desarrollo Backend</td>
+                        </tr>
+                        <tr>
+                            <td>Échame una pata</td>
+                            <td>Organización de Bienestar Animal</td>
+                            <td>Cliente</td>
+                        </tr>
+                        <tr>
+                            <td>Universidad Gerardo Barrios</td>
+                            <td>Institución Académica</td>
+                            <td>Patrocinador</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Servicios de Telecomunicaciones</td>
+                            <td>Proveedor de internet</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Suministros Tecnológicos</td>
+                            <td>Proveedor de hardware y materiales</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Refugios y Albergues</td>
+                            <td>Usuarios finales y colaboradores</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Sociedad</td>
+                            <td>Beneficiarios indirectos</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="subsection">
+            <div class="subsection-title" onclick="toggleSubsection(3)">2.3 Alcance del Proyecto</div>
+            <div class="subcontent">
+                <p>El proyecto está planeado para abarcar a toda la población salvadoreña, en específico, todas las personas que residan dentro del país. El término "mascotas" se refiere a los animales que se encuentran domesticados y son adoptados por una persona o familia para hacer compañía en su lugar de vivienda. En este caso, a las especies de mascotas a las que nos referimos son perros y gatos.</p>
+                <p>Los servicios de la aplicación móvil son exclusivos de los salvadoreños, ya que, como el servicio depende de la ubicación, este, solamente puede ser dentro de la extensión territorial salvadoreña. Las mascotas a las que se pueden abarcar con esta aplicación son las mascotas que se encuentran viviendo en situaciones críticas en todo el país. Los usuarios de la aplicación pueden subir todas las alertas que consideren posibles y no se limita a una localidad en específico.</p>
+                <p>Los servicios proveídos al cliente “Échame una pata” solo aplican a la única ubicación que poseen estos, o sea, en la ciudad de San Miguel. Como solo se trabaja con este cliente, algunos de los servicios beneficiosos que provee, se limitan a la ciudad de San Miguel, tanto en áreas urbanas como rurales.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content" id="content-2">
+        <h3>Parte 3</h3>
+        <div class="subsection">
+            <div class="subsection-title" onclick="toggleSubsection(4)">3. Análisis de la situación</div>
+            <div class="subcontent">
+                <p><strong>Análisis de las situaciones sociales actuales salvadoreñas</strong></p>
+                <p>Parte de la problemática que tratamos de resolver radica en diversos factores que se vienen perpetuando en la población salvadoreña hace años.</p>
+                <p>Uno de los factores más importantes es el mal cuidado y el maltrato que se les da a las mascotas sin hogar. La mayoría de las mascotas sin hogar son expuestas a las malas condiciones ambientales que posee El Salvador y también, a los malos tratos que les dan algunas personas que no poseen cariño alguno para con estas.</p>
+                <p>Muchas de las mascotas, además de experimentar el arduo calor o la lluvia, se encuentran en desnutrición y recurren regularmente al “robo” de los desechos alimenticios que encuentren en sus alrededores. Además, dependen de la “pena” que generan a los humanos que se encuentren en su camino y de la poca cantidad de alimentos que les den, que, en muchos casos, es solo un pequeño bocado.</p>
+                <p>Más allá de las situaciones que las mascotas experimentan al encontrarse sin un hogar, estas también pueden enfrentarse a los malos tratos dentro de un hogar. Ciertos dueños no están cualificados para la responsabilidad que acarrea tener una mascota que dependa de ellos y, por consecuente, no le proveen un ambiente digno.</p>
+                <p><strong>Proceso de pérdida y adopción</strong></p>
+                <p>Una mascota se califica como perdida cuando se escapa de su vivienda por diferentes razones. Después de un suceso así, el/la o los dueños se quedan con la incerteza del paradero de su compañero peludo.</p>
+                <p>Muchas de las mascotas de por sí se encuentran perdidas y no poseían ningún lugar de vivienda. El proceso de adopción se puede efectuar mediante diversas formas:</p>
+                <ul>
+                    <li>La visita a un albergue (en este caso, “Échame una pata”).</li>
+                    <li>El contacto con un dueño que dé en adopción una mascota por su cuenta.</li>
+                    <li>El encontrar una mascota perdida y adoptarla por cuenta propia.</li>
+                    <li>Uso de la aplicación móvil que se está desarrollando.</li>
+                </ul>
+                <p>El proceso de adopción es simple: tomar una mascota que no poseía un lugar de vivienda o que no poseía un lugar estable. Ese proceso involucra siempre a una persona o personas que estén haciendo la adopción, y por eso, es importante que el albergue o el equipo de la aplicación móvil efectúe una forma de estudio e investigación de la persona/personas y la vivienda que vaya a tener la mascota. No se debe solo entregar la mascota a su nuevo hogar; nosotros, como equipo, nos encargaremos de que la mascota sea entregada a un lugar digno de vivir.</p>
+                <p><strong>La solución está orientada a dos tipos de usuarios principales:</strong></p>
+                <ul>
+                    <li><strong>Propietarios de Mascotas Perdidas:</strong> Personas que buscan a sus mascotas extraviadas. Necesitan una herramienta rápida, eficiente y confiable para localizar a sus animales.</li>
+                    <li><strong>Usuarios en busca de Adopciones:</strong> Personas interesadas en adoptar animales, que necesitan una plataforma que les brinde información sobre las mascotas disponibles y facilite el contacto con refugios y organizaciones de rescate.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="subsection">
+            <div class="subsection-title" onclick="toggleSubsection(5)">3.1 Estrategias</div>
+            <div class="subcontent">
+                <p>Las estrategias para implementar el proyecto incluyen:</p>
+                <ul>
+                    <li><strong>Alianzas estratégicas: </strong>Colaborar con veterinarias, empresas locales y otras organizaciones para obtener apoyo financiero, alimento y atención médica.</li>
+                    <li><strong>Campañas de adopción: </strong>Organizar eventos de adopción en espacios públicos y centros comerciales para encontrar hogares responsables para los animales.</li>
+                    <li><strong>Programas de esterilización: </strong>Implementar jornadas periódicas de esterilización y vacunación para reducir la población de animales callejeros.</li>
+                    <li><strong>Concienciación y educación: </strong>Realizar charlas en escuelas y comunidades sobre la importancia del bienestar animal y la tenencia responsable.</li>
+                    <li><strong>Presencia en redes sociales: </strong>Usar Facebook, Instagram y TikTok para compartir historias de rescates, casos de adopción y promover donaciones.</li>
+                    <li><strong>Voluntariado activo: </strong>Fomentar la participación de voluntarios para ayudar en el cuidado de los animales y en la difusión de nuestras campañas.</li>
+                    <li><strong>Recaudación de fondos: </strong>Organizar rifas, ventas benéficas y eventos para generar ingresos y asegurar la sostenibilidad del albergue.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="subsection">
+            <div class="subsection-title" onclick="toggleSubsection(6)">3.1.2 Metas</div>
+            <div class="subcontent">
+                <p>Las metas del proyecto incluyen:</p>
+                <ul>
+                    <li>Reducir el abandono animal en San Miguel mediante campañas de concienciación y adopción</li>
+                    <li>Asegurar atención veterinaria básica para el 100% de las mascotas en el albergue, incluyendo desparasitación, vacunación y esterilización.</li>
+                    <li>Aumentar la tasa de adopciones en al menos un 30% cada año.</li>
+                    <li>Establecer un centro de atención ampliado con mejores instalaciones para el cuidado de más animales en condiciones óptimas.</li>
+                    <li>Crear un fondo de emergencia para cubrir gastos médicos de animales en situaciones críticas.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="subsection">
+            <div class="subsection-title" onclick="toggleSubsection(7)">3.1.3 Objetivos</div>
+            <div class="subcontent">
+                <p><strong>Objetivo general</strong></p>
+                <p>Brindar refugio, atención médica y una segunda oportunidad a mascotas en situación de calle o abandono en San Miguel, El Salvador, fomentando la adopción responsable y promoviendo la educación sobre el bienestar animal en la comunidad.</p>
+                <br>
+                <p><strong>Objetivos específicos</strong></p>
+                <p>🐶 Rescatar, rehabilitar y reubicar animales en hogares responsables, garantizando su bienestar mediante atención veterinaria, alimentación adecuada y seguimiento post-adopción.</p>
+                <p>🐶 Reducir la población de animales callejeros en San Miguel mediante campañas periódicas de esterilización y vacunación accesibles para la comunidad.</p>
+                <p>🐶 Fomentar la conciencia y responsabilidad ciudadana respecto al bienestar animal a través de programas educativos, talleres y difusión en redes sociales.</p>
+            </div>
+        </div>
+        <div class="subsection">
+            <div class="subsection-title" onclick="toggleSubsection(8)">3.2 Problema/causa raíz u oportunidad</div>
+            <div class="subcontent">
+                <p>El problema principal es la falta de recursos y organización en los refugios de mascotas, lo que dificulta su capacidad para cuidar adecuadamente a las mascotas. La causa raíz es la falta de conciencia y recursos en la sociedad para abordar este problema. Sin embargo, esto representa una oportunidad para implementar soluciones tecnológicas que mejoren la situación.</p>
+                <div class="info-table">
+                    <table>
+                        <tr>
+                            <td><strong>Problema</strong></td>
+                            <td><strong>Oportunidad</strong></td>
+                        </tr>
+                        <tr>
+                            <td><li>Falta de visibilidad para mascotas perdidas y en adopción</li>
+                                <li>Proceso de adopción desorganizado</li>
+                                <li>Falta de colaboración entre los diferentes actores</li>
+                                <li>Falta de herramientas tecnológicas adecuadas</li>
+                            </td>
+                            <td>
+                                <li>Optimización de la búsqueda de mascotas perdidas, mejora en la visibilidad de mascotas en adopción</li>
+                                <li>Simplificación del proceso de adopción</li>
+                                <li>Alianzas estratégicas con refugios y veterinarios</li>
+                                <li>Educación y sensibilización sobre la adopción responsable</li>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="subsection">
+            <div class="subsection-title" onclick="toggleSubsection(9)">3.3 Brechas: Capacidades requeridas vs. actuales</div>
+            <div class="subcontent">
+                <p>Las capacidades actuales son limitadas, ya que los refugios carecen de tecnología y recursos para implementar estas soluciones.</p>
+                <p>Las capacidades requeridas incluyen:</p>
+                <div class="info-table">
+                    <table>
+                        <tr>
+                            <td><strong>Capacidades requeridas</strong></td>
+                            <td><strong>Capacidades actuales</strong></td>
+                        </tr>
+                        <tr>
+                            <td><p>Insumos suficientes para la higiene de los animales</p>
+                                <p>Infraestructura con el espacio necesario (500 metros cuadrados)</p>
+                                <p>Computadoras e infraestructura tecnológica suficiente</p>
+                                <p>Más de 10 personas voluntarias con el conocimiento necesario del cuido de mascotas</p>
+                                <p>Apoyo financiero para el pago puntual del inmueble</p>
+                                <p>Medicamentos de la correcta calidad</p>
+                                <p>Apoyo de las entidades gubernamentales para la gestión del albergue</p>
+                            </td>
+                            <td>
+                                <p>Insumos escasos para la higiene de los animales</p>
+                                <p>Inmueble con un espacio reducido (200 metros cuadrados)</p>
+                                <p>Ninguna computadora</p>
+                                <p>2 a 5 personas voluntarias con el conocimiento necesario del cuido de mascotas</p>
+                                <p>Pago tardío del inmueble</p>
+                                <p>Pocos o nulos medicamentos de correcta calidad</p>
+                                <p>Nulo apoyo por parte del gobierno</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="subsection">
+            <div class="subsection-title" onclick="toggleSubsection(10)">3.4 Riesgos conocidos</div>
+            <div class="subcontent">
+                <p>Los riesgos conocidos incluyen:</p>
+                <ul>
+                    <li>Falta de adopción de la aplicación por parte de la población.</li>
+                    <li>Dificultades técnicas en la implementación de sistemas automatizados.</li>
+                    <li>Falta de financiamiento para mantener el proyecto a largo plazo.</li>
+                    <li>Resistencia por parte de las organizaciones gubernamentales por temor al uso mal intencionado por parte de la empresa desarrolladora o software de terceros.</li>
+                    <li>Temor a adoptar el sistema de domótica en los albergues a causa del poco conocimiento acerca del IOT (Internet de las Cosas).</li>
+                    <li>Nulo o poco apoyo por parte de las comunidades debido al poco interés por las mascotas.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="subsection">
+            <div class="subsection-title" onclick="toggleSubsection(11)">3.5 Factores críticos de éxito</div>
+            <div class="subcontent">
+                <p>Los factores críticos de éxito incluyen:</p>
+                <ul>
+                    <li>Colaboración estrecha con refugios y albergues.</li>
+                    <li>Desarrollo de una aplicación fácil de usar y accesible.</li>
+                    <li>Concienciación y educación sobre la adopción responsable.</li>
+                    <li>Gestión y desarrollo eficaz de cada fase del proyecto, desde la planificación hasta la implementación y mantenimiento.</li>
+                    <li>Seguridad y protección de datos, garantizando la privacidad de la información de los usuarios y la confiabilidad en la plataforma.</li>
+                    <li>Pruebas rigurosas de funcionalidad y usabilidad, asegurando que la aplicación sea estable, segura y cumpla con los objetivos propuestos.</li>
+                    <li>Escalabilidad y sostenibilidad del proyecto, asegurando que la aplicación pueda crecer y mantenerse en el tiempo con nuevas funciones y mejoras.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="subsection">
+            <div class="subsection-title" onclick="toggleSubsection(12)">3.6 Criterios de decisión</div>
+            <div class="subcontent">
+                <p>Los criterios de decisión incluyen:</p>
+                <div class="info-table">
+                    <table>
+                        <tr>
+                            <td></td>
+                            <td><strong>Categorías</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Requerido</td>
+                            <td>
+                                <li>Escalabilidad de la plataforma</li>
+                                <li>Facilidad de uso y experiencia de usuario (UX)</li>
+                                <li>Compatibilidad multiplataforma (Android/iOS)</li>
+                                <li>Seguridad y protección de datos Optimización en la búsqueda</li>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="subsection">
+            <div class="subsection-title" onclick="toggleSubsection(13)">3.7 Impacto del proyecto</div>
+            <div class="subcontent">
+                <p>El impacto del proyecto incluye:</p>
+                <div class="info-table">
+                    <table>
+                        <tr>
+                            <td><strong>Tecnología</strong></td>
+                            <td>Impactaría tanto para la empresa como los usuarios ya que habría un amplio desarrollo en la manera de manejar la aplicación, nuevas funcionalidades útiles para los usuarios y desarrollo tecnológico en robótica, siendo nuevas tecnologías automatizadas.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Procesos</strong></td>
+                            <td>El proyecto optimizará los procesos internos mediante la automatización de tareas repetitivas, mejorando la eficiencia y reduciendo el margen de error.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Estructura</strong></td>
+                            <td>El proyecto puede requerir una reestructuración en la organización del trabajo, asignación de nuevos roles o la creación de equipos especializados para su implementación y tomando turnos en las áreas en las que cada uno se especializa para poder dividir correctamente el trabajo.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cultura</strong></td>
+                            <td>Culturalmente el proyecto tendría un impacto de nuevas costumbres de mejor trato hacia los animales y mascotas y nuevas mentalidades sobre las decisiones a tomar acerca de estas mismas.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Habilidades del personal</strong></td>
+                            <td>Tendría un impacto significativo en las habilidades del personal, debió al crecimiento personal en áreas académicas, aprendizaje, laboral y crecimiento en habilidades necesarias para desarrollar el proyecto.</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="subsection">
+            <div class="subsection-title" onclick="toggleSubsection(14)">3.8 Conjunto de opciones</div>
+            <div class="subcontent">
+                <p>Las opciones para implementar el proyecto incluyen:</p>
+                <div class="info-table">
+                    <table>
+                        <tr>
+                            <td><strong>Acciones posibles</strong></td>
+                            <td><strong>Observaciones</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Acción 1: Aplicación móvil</td>
+                            <td>Crear una aplicación completamente personalizada que incluya funcionalidades como IA y contacto con veterinarios. Esta opción permitirá un control total sobre el desarrollo, pero requiere una inversión significativa en tiempo y recursos, permitirá contactarse con albergues y hacer búsquedas cercanas de mascotas perdidas y en adopción</td>
+                        </tr>
+                        <tr>
+                            <td>Acción 2: Dispositivos autónomos de limpieza</td>
+                            <td>Implementar dispositivos autónomos para la limpieza y necesidades de las mascotas, estos dispositivos estarán más centrado en el aseo de las mascotas, el ejemplo principal serán las cajas de áreas automáticas que se limpian solas y las zonas de baño de las mascotas que estarán automatizadas. Esta opción permitirá una mayor eficacia y rapidez en las labores diarias y necesidades básicas de las mascotas y de igual forma se necesitará un presupuesto más elevado.</td>
+                        </tr>
+                        <tr>
+                            <td>Acción 3: Sistema de seguridad (Aplicación de Domótica y Robótica)</td>
+                            <td>Implementar un sistema de seguridad basado en cámaras y alarmas que mantengan vigilados los exteriores e interiores de los albergues y refugios en los que las mascotas residen haciendo más seguro el monitoreo de las mascotas sobre sus comportamientos y los factores externos que los afectan. Esto generaría una inversión significativa de tiempo y recursos en cuanto a programación y finanzas.</td>
+                        </tr>
+                        <tr>
+                            <td>Acción 4: Collares inteligentes</td>
+                            <td>Desarrollar collares inteligentes que se encargaran de monitorear la ubicación de todas las mascotas en todo momento dado caso estas mismas se extravíen y mantener monitoreado los estados vitales de las mascotas residentes de albergues y refugios. Esto generara una subida en la cantidad de horas invertidas en el desarrollo de estos collares.</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content" id="content-3">
+        <h3>Parte 4</h3>
+        <div class="subsection">
+            <div class="subsection-title" onclick="toggleSubsection(15)">4. Recomendación</div>
+            <div class="subcontent">
+                <p>Se recomienda implementar el proyecto de manera gradual, comenzando con el desarrollo de la aplicación móvil y la colaboración con refugios locales. Posteriormente, se pueden implementar sistemas automatizados en los refugios y realizar campañas de concientización.</p>
+            </div>
+        </div>
+        <div class="subsection">
+            <div class="subsection-title" onclick="toggleSubsection(16)">4.1 Enunciado</div>
+            <div class="subcontent">
+                <p><strong>Resultado del Análisis</strong></p>
+                <p>El proyecto tiene como objetivo principal mejorar las condiciones de vida de las mascotas en situación de vulnerabilidad mediante la implementación de una guardería automatizada y una plataforma digital que facilite la adopción y el rescate de animales.</p>
+                <div class="info-table">
+                    <table>
+                        <tr>
+                            <td><strong>Acciones posibles</strong></td>
+                            <td><strong>Resultados del Análisis</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Acción 1: Aplicación móvil</td>
+                            <td>La implementación de una aplicación móvil personalizada con inteligencia artificial y contacto con veterinarios es altamente viable, aunque requiere un equipo de desarrollo especializado en IA y programación. Su costo de desarrollo e implementación es elevado debido a la integración de funcionalidades avanzadas, pero su impacto sería muy positivo, ya que facilitaría la adopción, el seguimiento de mascotas y el acceso a servicios veterinarios de manera más eficiente. Sin embargo, se deben considerar desafíos como la seguridad de los datos, el mantenimiento constante y la necesidad de actualizaciones para garantizar su correcto funcionamiento y mejorar la experiencia del usuario.</td>
+                        </tr>
+                        <tr>
+                            <td>Acción 2: Dispositivos autónomos de limpieza</td>
+                            <td>La automatización de la limpieza y el aseo de las mascotas mediante dispositivos inteligentes representa una solución innovadora con un alto impacto en la higiene y bienestar de los animales. Sin embargo, su viabilidad es moderada, ya que el desarrollo de hardware especializado puede ser complejo y costoso, especialmente en la fase de prototipado y pruebas. Aunque estos dispositivos facilitarían las labores diarias y reducirían el tiempo dedicado a la limpieza, se requiere una inversión significativa para su producción y perfeccionamiento, además de garantizar su seguridad y eficiencia antes de su implementación en entornos reales</td>
+                        </tr>
+                        <tr>
+                            <td>Acción 3: Sistema de seguridad (Aplicación de Domótica y Robótica)</td>
+                            <td>La implementación de un sistema de seguridad basado en domótica y robótica es altamente viable, dado que existen tecnologías similares en el mercado que pueden adaptarse a este proyecto. Su instalación generaría un impacto significativo en la seguridad de los albergues y refugios, permitiendo un monitoreo continuo de los animales y su entorno. Sin embargo, los costos pueden ser elevados debido a la necesidad de cámaras, sensores, almacenamiento de datos y un software de control eficiente. Además, es importante considerar el mantenimiento periódico del sistema y la infraestructura requerida para su óptimo funcionamiento.</td>
+                        </tr>
+                        <tr>
+                            <td>Acción 4: Collares inteligentes</td>
+                            <td>El desarrollo de collares inteligentes para el monitoreo y rastreo de mascotas es una alternativa con un impacto positivo en la seguridad y control de los animales en refugios. Su viabilidad es moderada, ya que implica el desarrollo tanto de hardware resistente como de software eficiente para la gestión de datos en tiempo real. Aunque los costos iniciales pueden ser considerables, la producción en masa podría hacerlos más accesibles a largo plazo. El principal desafío radica en garantizar que los dispositivos sean duraderos, cómodos para las mascotas y con un consumo energético optimizado para prolongar la duración de la batería.</td>
+                        </tr>
+                    </table>
+                </div>
+                <p><strong>Restricciones / Limitaciones</strong></p>
+                <div class="info-table">
+                    <table>
+                        <tr>
+                            <td><strong>Acciones posibles</strong></td>
+                            <td><strong>Restricciones</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Acción 1: Aplicación móvil</td>
+                            <td>La principal restricción para el desarrollo de la aplicación móvil es la inversión económica necesaria, ya que el desarrollo de software con inteligencia artificial y funciones avanzadas requiere un equipo especializado y constante mantenimiento. Además, es fundamental garantizar la seguridad y privacidad de los datos de los usuarios y las mascotas. También puede haber limitaciones en la compatibilidad con diferentes dispositivos y sistemas operativos, lo que puede afectar su accesibilidad y adopción por parte de los usuarios.</td>
+                        </tr>
+                        <tr>
+                            <td>Acción 2: Dispositivos autónomos de limpieza</td>
+                            <td>El desarrollo de estos dispositivos enfrenta limitaciones tecnológicas y económicas, ya que requiere hardware especializado, sensores avanzados y algoritmos de inteligencia artificial para su correcto funcionamiento.</td>
+                        </tr>
+                        <tr>
+                            <td>Acción 3: Sistema de seguridad (Aplicación de Domótica y Robótica)</td>
+                            <td>La principal limitación de este sistema es el costo de instalación y mantenimiento, ya que requiere cámaras, sensores, almacenamiento de datos y una infraestructura estable para su correcto funcionamiento.</td>
+                        </tr>
+                        <tr>
+                            <td>Acción 4: Collares inteligentes</td>
+                            <td>Una de las principales restricciones para los collares inteligentes es el diseño de un dispositivo compacto, ligero y resistente que sea cómodo para las mascotas y al mismo tiempo funcional. La duración de la batería es otro factor limitante, ya que debe ser suficiente para un monitoreo continuo sin necesidad de recargas frecuentes.</td>
+                        </tr>
+                    </table>
+                </div>
+                <p><strong>Supuestos Estratégicos</strong></p>
+                <div class="info-table">
+                    <table>
+                        <tr>
+                            <td><strong>Acciones posibles</strong></td>
+                            <td><strong>Supuestos</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Acción 1: Aplicación móvil</td>
+                            <td>Se asume que habrá acceso a un equipo de desarrollo con experiencia en inteligencia artificial y aplicaciones móviles. También se espera que la adopción de la aplicación por parte de los usuarios sea alta debido a la facilidad de acceso a dispositivos móviles. </td>
+                        </tr>
+                        <tr>
+                            <td>Acción 2: Dispositivos autónomos de limpieza</td>
+                            <td>Se parte del supuesto de que los avances tecnológicos permitirán la creación de dispositivos eficientes y asequibles en el mercado. También se asume que los refugios y usuarios estarán dispuestos a adoptar estas soluciones automatizadas debido a la reducción de tiempo y esfuerzo en el aseo de las mascotas. </td>
+                        </tr>
+                        <tr>
+                            <td>Acción 3: Sistema de seguridad (Aplicación de Domótica y Robótica)</td>
+                            <td>Se considera que habrá una infraestructura tecnológica suficiente para implementar el sistema de cámaras y sensores sin afectar el funcionamiento de los refugios. También se asume que la inversión en ciberseguridad garantizará la protección de los datos y evitará vulnerabilidades</td>
+                        </tr>
+                        <tr>
+                            <td>Acción 4: Collares inteligentes</td>
+                            <td>Se parte del supuesto de que la miniaturización de la tecnología permitirá el desarrollo de collares cómodos y funcionales sin afectar el bienestar de las mascotas. También se considera que habrá acceso a una red estable para la transmisión de datos y que el costo de producción podrá optimizarse para hacer los collares accesibles. </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><strong>Riesgos</strong></p>
+                <div class="info-table">
+                    <table>
+                        <tr>
+                            <td><strong>Acciones posibles</strong></td>
+                            <td><strong>Restricciones</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Acción 1: Aplicación móvil</td>
+                            <td>
+                                <li>Fallas de seguridad y privacidad: Existe el riesgo de que los datos de los usuarios y mascotas sean vulnerables a ataques cibernéticos.</li>
+                                <li>Baja adopción por parte de los usuarios: Si la aplicación no es intuitiva o presenta fallos, los usuarios podrían no utilizarla.</li>
+                                <li>Altos costos de desarrollo y mantenimiento: Puede ser costoso mantener y actualizar la aplicación para garantizar su funcionalidad y seguridad.</li>
+                                <li>Dependencia de la conectividad a internet: En zonas con baja cobertura, la aplicación podría no ser eficiente.</li>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Acción 2: Dispositivos autónomos de limpieza</td>
+                            <td>
+                                <li>Costos elevados de producción y mantenimiento: La tecnología para estos dispositivos puede ser costosa, lo que podría limitar su accesibilidad.</li>
+                                <li>Posibles fallos en la funcionalidad: Problemas técnicos podrían afectar la eficiencia de los dispositivos y generar costos adicionales en reparaciones.</li>
+                                <li>Resistencia por parte de los usuarios: Algunas personas pueden preferir métodos tradicionales de limpieza y no confiar en la automatización</li>
+                                <li>Durabilidad y mantenimiento de los dispositivos: Si los materiales no son adecuados, los dispositivos pueden dañarse rápidamente.</li>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Acción 3: Sistema de seguridad (Aplicación de Domótica y Robótica)</td>
+                            <td>
+                                <li>Costos elevados de implementación y mantenimiento: Se requiere una inversión significativa en equipos y software de seguridad.</li>
+                                <li>Riesgo de fallas técnicas: Errores en los sistemas de cámaras y sensores podrían comprometer la seguridad del refugio.</li>
+                                <li>Amenazas cibernéticas: Hackeos o accesos no autorizados podrían poner en riesgo la privacidad y el control del sistema.</li>
+                                <li>Dependencia de una conexión estable a internet: En caso de interrupciones en la conectividad, el sistema de seguridad podría fallar.</li>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Acción 4: Collares inteligentes</td>
+                            <td>
+                                <li>Problemas de batería y autonomía: Si la duración de la batería es baja, el collar perdería su funcionalidad rápidamente.</li>
+                                <li>Costos elevados de producción: La tecnología integrada en los collares puede hacer que su precio sea inaccesible para algunos usuarios</li>
+                                <li>Incomodidad para las mascotas: Si los collares son demasiado pesados o incómodos, podrían generar rechazo en los animales.</li>
+                                <li>Riesgo de pérdida o daño: Los collares podrían extraviarse o dañarse, reduciendo su utilidad y generando costos adicionales.</li>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p><strong>Análisis Financiero</strong></p>
+                <div class="info-table">
+                    <table>
+                        <tr>
+                            <td><strong>Acciones posibles</strong></td>
+                            <td><strong>Análisis Financiero - NVP</strong></td>
+                            <td><strong>Otro</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Acción 1: Aplicación móvil</td>
+                            <td>USD 14,566.33</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Acción 2: Dispositivos autónomos de limpieza</td>
+                            <td>USD 7,550.49</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Acción 3: Sistema de seguridad (Aplicación de Domótica y Robótica)</td>
+                            <td>USD 2,800.00</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Acción 4: Collares inteligentes</td>
+                            <td>USD 3,566.99</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="subsection">
+            <div class="subsection-title" onclick="toggleSubsection(17)">4.2 Enfoque de implementación</div>
+            <div class="subcontent">
+                <p>El enfoque de implementación incluye:</p>
+                <p><strong>Hitos y Dependencias</strong></p>
+                <div class="info-table">
+                    <table>
+                        <tr>
+                            <td><strong>Hito</strong></td>
+                            <td><strong>Fecha de Entrega</strong></td>
+                        </tr>
+                        <tr>
+                            <td>H1. Reunión para presentación y entrega de Caso de Negocio al Cliente</td>
+                            <td>20 a 22 de enero</td>
+                        </tr>
+                        <tr>
+                            <td>H2. Análisis de Requerimientos y Diseño del MVP (Producto Mínimo Viable)</td>
+                            <td>23 a 28 de enero</td>
+                        </tr>
+                        <tr>
+                            <td>H3. Desarrollo de funcionalidades clave (Búsqueda de mascotas y registros de adopciones)</td>
+                            <td>29 de enero a 26 de febrero</td>
+                        </tr>
+                        <tr>
+                            <td>H4. Integración con bases de datos y veterinarios</td>
+                            <td>3 a 14 de marzo</td>
+                        </tr>
+                        <tr>
+                            <td>H5. Pruebas de funcionalidad y rendimiento del MVP</td>
+                            <td>17 a 22 de marzo</td>
+                        </tr>
+                        <tr>
+                            <td>H6. Implementación de seguridad y pruebas de protección de datos</td>
+                            <td>24 de marzo a 14 de abril</td>
+                        </tr>
+                        <tr>
+                            <td>H7. Lanzamiento del MVP para pruebas internas y retroalimentación de usuarios</td>
+                            <td>15 de abril</td>
+                        </tr>
+                        <tr>
+                            <td>H8. Análisis de retroalimentación y ajustes en la aplicación</td>
+                            <td>16 de abril a 14 de mayo</td>
+                        </tr>
+                        <tr>
+                            <td>H9. Evaluación continua y optimización del rendimiento de la app</td>
+                            <td>15 de mayo a 15 de julio</td>
+                        </tr>
+                    </table>
+                </div>
+                <p><strong>Roles y Responsabilidades</strong></p>
+                <div class="info-table">
+                    <table>
+                        <tr>
+                            <td><strong>Roles</strong></td>
+                            <td><strong>Responsabilidades</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Líder del proyecto </td>
+                            <td>Supervisar el progreso del proyecto, asegurando el cumplimiento de plazos y presupuesto, coordinar con las partes interesadas y gestionar la comunicación entre el equipo y el cliente</td>
+                        </tr>
+                        <tr>
+                            <td>Desarrollador Backend </td>
+                            <td>Diseñar e implementar la arquitectura del servidor, la DB y lógica del software, asegurando que la app pueda gestionar la información de mascotas perdidas, adopciones y conexiones con veterinarios </td>
+                        </tr>
+                        <tr>
+                            <td>Desarrollador Frontend</td>
+                            <td>Implementar la interfaz de usuario de la app, asegurando que sea intuitiva y funcional, colaborando en equipo con el diseñador UX/UI para crear una experiencia atractiva y fluida para los usuarios</td>
+                        </tr>
+                        <tr>
+                            <td>Diseñador UX/UI</td>
+                            <td>Crea los prototipos y diseños de la app, asegurando que la interfaz sea amigable y fácil de usar, trabajando con el equipo de desarrollo frontend para implementar el diseño</td>
+                        </tr>
+                        <tr>
+                            <td>Tester/QA</td>
+                            <td>Realiza pruebas continuas de funcionalidad, rendimiento y seguridad de la app, para identificar y corregir errores</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content" id="content-4">
+        <h3>Parte 5</h3>
+        <div class="subsection">
+            <div class="subsection-title" onclick="toggleSubsection(18)">5. Evaluación</div>
+            <div class="subcontent">
+                <p>El beneficio se medirá en términos del logro de los objetivos del proyecto planteados:</p>
+                <div class="info-table">
+                    <table>
+                        <tr>
+                            <td><strong>Objetivo</strong></td>
+                            <td><strong>Meta</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Mejorar la tasa de recuperación de mascotas perdidas</td>
+                            <td>Recuperar al menos el 75% de las mascotas reportadas como perdidas dentro de los primeros 7 días.</td>
+                        </tr>
+                        <tr>
+                            <td>Incrementar la tasa de adopciones de mascotas</td>
+                            <td>Aumentar en un 30% la cantidad de adopciones a través de la plataforma en el primer año.</td>
+                        </tr>
+                        <tr>
+                            <td>Generar alianzas con veterinarios y refugios de animales</td>
+                            <td>Establecer al menos 50 alianzas con veterinarias y refugios en los primeros 6 meses.</td>
+                        </tr>
+                        <tr>
+                            <td>Asegurar una experiencia de usuario intuitiva y accesible</td>
+                            <td>Lograr una puntuación de al menos 4.5 estrellas en la App Store y Google Play después de 6 meses.</td>
+                        </tr>
+                        <tr>
+                            <td>Ofrecer una plataforma segura y confiable </td>
+                            <td>Garantizar que el 99% de las transacciones y datos estén protegidos bajo los estándares de seguridad más altos.</td>
+                        </tr>
+                        <tr>
+                            <td>Ampliar la base de usuarios de la aplicación </td>
+                            <td>Alcanzar 100,000 usuarios activos al final del primer año de operaciones.</td>
+                        </tr>
+                        <tr>
+                            <td>Optimizar el tiempo de respuesta en la búsqueda de mascotas perdidas </td>
+                            <td>Reducir el tiempo promedio de búsqueda de mascotas perdidas a menos de 24 horas desde el reporte.</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showTab(index) {
+            let tabs = document.querySelectorAll('.tab');
+            let contents = document.querySelectorAll('.content');
+
+            tabs.forEach((tab, i) => {
+                tab.classList.toggle('active', i === index);
+                contents[i].classList.toggle('active', i === index);
+            });
+        }
+
+        function toggleSubsection(index) {
+            let subcontent = document.querySelectorAll('.subcontent')[index];
+            subcontent.style.display = subcontent.style.display === "block" ? "none" : "block";
+        }
+    </script>
+
+</body>
+</html>
