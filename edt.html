@@ -137,6 +137,15 @@
             display: block;
             margin: 0 auto 20px;
         }
+        .roadmap-image {
+    width: 100%;
+    max-width: 1200px; 
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
     </style>
 </head>
 <body>
@@ -148,7 +157,7 @@
         <img src="logo.png" alt="Logo Paw Match" class="logo">
     </header>
 
-    <!-- Contenido de las partes -->
+    
     <div class="content active" id="content-0">
         <h3>EDT</h3>
         <div class="subsection">
@@ -844,6 +853,10 @@
                     
                 </div>
             </div>
+            <div class="subsection">
+                <div class="subsection-title" onclick="toggleSubsection(3)">Roadmap</div>
+                <div class="subcontent">
+                    <img src="roadmap.png" alt="Roadmap del Proyecto" class="roadmap-image">
         </div>
         
 
