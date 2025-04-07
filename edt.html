@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;  
+            position: relative;
+            padding: 10px 20px;
+            text-align: center;
+            margin-bottom: 20px; 
+        }
+        h3 {
+            margin: 3px 0;
+            text-align: center;
+            padding: 0 10px; 
+        }
+        .logo {
+            width: 100px; 
+            height: auto;
+            position: absolute;
+            right: 30px;
+            bottom: 90px;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background: #ddd;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .tab:hover, .tab.active {
+            background: #c380f2;
+            color: white;
+        }
+        .content {
+            display: none;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .content.active {
+            display: block;
+        }
+        .subsection {
+            margin-top: 10px;
+            text-align: left;
+        }
+        .subsection-title {
+            cursor: pointer;
+            background: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .subsection-title:hover {
+            background: #c380f2;
+        }
+        .subcontent {
+            display: none;
+            padding: 10px;
+            border-left: 3px solid #c380f2;
+            margin-top: 5px;
+            text-align: justify;
+        }
+        h2 {
+            color: #c380f2;
+        }
+        .info-table {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .info-table table {
+            width: 80%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .info-table td {
+            border: 3px solid #6c5f80;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        .info-table strong {
+            font-weight: bold;
+            color: #c18db4;
+        }
+        .back-button {
+         display: flex;
+         justify-content: center;
+         position: absolute;
+         top: 10px;
+         left: 10px;
+         padding: 10px 20px;
+         cursor: pointer;
+         background: #ddd;
+         border-radius: 5px;
+         transition: 0.3s;
+         }
+ 
+         .back-button:hover {
+             background: #c380f2;
+             color: white;
+             cursor: pointer;
+             padding: 10px;
+             border-radius: 5px;
+             transition: 0.3s;
+         }
+         .container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        img {
+            max-width: 60%;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+
+        <div  class="back-button" onclick="redirigir()">🐈 Volver</div>
+        <h2>Diccionario EDT</h2>
+        <img src="logo.png" alt="Logo Paw Match" class="logo">
+    </header>
+
+    <!-- Contenido de las partes -->
+    <div class="content active" id="content-0">
+        <h3>EDT</h3>
+        <div class="subsection">
+            
+            <div class="container">
+                <img src="edt.png" alt="EDT del Proyecto">
+            </div>
+        </div>
+        </div>
+        <div class="subsection">
+            <div class="subsection-title" onclick="toggleSubsection(0)">1.1 Plataforma Local</div>
+            <div class="subcontent">
+            <div class="info-table">
+                <table>
+                    <tr>
+                        <td><strong>ID#</strong> 1.1.1 Base de Datos</td>
+                        <td><strong>Cuenta control ID#</strong> 1.1</td>
+                        <td><strong>Ultima Actualización</strong> 25 de abril</td>
+                        <td><strong>Responsable</strong> Mariana Herrera Márquez</td>
+                    </tr>
+                        <tr>
+                            <td colspan="4"><strong>Descripción:</strong> Diseño e implementación de la base de datos para almacenar información de mascotas y dueños.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Criterio de aceptación: </strong>La base de datos debe soportar al menos 1,000 registros y estar integrada con la plataforma local.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Entregables: </strong> Diagrama ER, script de creación de la base de datos, informe de pruebas.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Supuestos: </strong> El servidor estará disponible para la instalación.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Recursos asignados: </strong> 1 desarrollador, 1 DBA, 1 servidor.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Duración: </strong> 10 días hábiles</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Hitos: </strong> 25 abril: Base de datos diseñada y aprobada.</td>
+                        </tr>
+                </table>
+                
+            </div>
+            <div class="info-table">
+                <table>
+                    <tr>
+                        <td><strong>ID#</strong> 1.1.1.1 Diseño de la Base de Datos</td>
+                        <td><strong>Cuenta control ID#</strong> 1.1</td>
+                        <td><strong>Ultima Actualización</strong> 15 de abril</td>
+                        <td><strong>Responsable</strong> Mariana Herrera Márquez</td>
+                    </tr>
+                        <tr>
+                            <td colspan="4"><strong>Descripción:</strong> Diseñar una base de datos para la aplicación móvil. </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Criterio de aceptación: </strong> Que la base de datos sea funcional y funcionen las conexiones.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Entregables: </strong> Diseño de la base de datos visualmente, topología de las conexiones.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Supuestos: </strong> La base de datos estará lista para la implementación</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Recursos asignados: </strong> 1 desarrollador, 1 DBA, 1 servidor.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Duración: </strong> 2 días hábiles</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Hitos: </strong> 15 abril: Base de datos diseñada</td>
+                        </tr>
+                </table>
+                
+            </div>
+            <div class="info-table">
+                <table>
+                    <tr>
+                        <td><strong>ID#</strong> 1.1.1.2 Implementación de la base de datos.</td>
+                        <td><strong>Cuenta control ID#</strong> 1.1</td>
+                        <td><strong>Ultima Actualización</strong> 18 de abril </td>
+                        <td><strong>Responsable</strong> Mariana Herrera Márquez</td>
+                    </tr>
+                        <tr>
+                            <td colspan="4"><strong>Descripción:</strong> La base de datos seria implementada haciendo las conexiones respectivas a la aplicación y página web</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Criterio de aceptación: </strong> La base de datos está conectada correctamente a la aplicación y la página web</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Entregables: </strong> Implementación completada de la base de datos junto a la aplicación y la página web</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Supuestos: </strong> La base de datos ya está implementada en la aplicación y la página web lista para seguido configurar las copias de seguridad</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Recursos asignados: </strong> Un desarrollador, 1 DBA, 1 servidor</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Duración: </strong> 3 días hábiles</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Hitos: </strong> 18 abril: Base de datos implementada</td>
+                        </tr>
+                </table>
+                
+            </div>
+            <div class="info-table">
+                <table>
+                    <tr>
+                        <td><strong>ID#</strong> 1.1.1.3  Configuración de copias de seguridad.</td>
+                        <td><strong>Cuenta control ID#</strong> 1.1</td>
+                        <td><strong>Ultima Actualización</strong> 23 de abril</td>
+                        <td><strong>Responsable</strong> Mariana Herrera Márquez</td>
+                    </tr>
+                        <tr>
+                            <td colspan="4"><strong>Descripción:</strong> Se configurará las copias de seguridad en la base de datos</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Criterio de aceptación: </strong> La base de datos efectivamente logra guardar las copias de seguridad </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Entregables: </strong> Implementación completa de las copias de seguridad en la base de datos</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Supuestos: </strong> Las copias de seguridad ya están implementadas en la base de datos y funcionan efectivamente</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Recursos asignados: </strong> Un desarrollador, 1 DBA, 1 servidor</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Duración: </strong> 3 días hábiles</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Hitos: </strong> 23 de abril</td>
+                        </tr>
+                </table>
+                
+            </div>
+            <div class="info-table">
+                <table>
+                    <tr>
+                        <td><strong>ID#</strong> 1.1.2 Hardware</td>
+                        <td><strong>Cuenta control ID#</strong> 1.1</td>
+                        <td><strong>Ultima Actualización</strong> 2 de mayo</td>
+                        <td><strong>Responsable</strong> Diego Alejandro Rodríguez Valencia</td>
+                    </tr>
+                        <tr>
+                            <td colspan="4"><strong>Descripción:</strong> Selección e instalación de hardware (sensores, cámaras, alimentadores).</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Criterio de aceptación: </strong> El hardware debe estar instalado y funcionando correctamente.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Entregables: </strong> Listado de hardware, informe de instalación, informe de pruebas.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Supuestos: </strong> El presupuesto para hardware estará aprobado</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Recursos asignados: </strong> 1 técnico de hardware, 1 instalador, herramientas.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Duración: </strong> 20 días hábiles</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Hitos: </strong> 2 mayo: Hardware instalado y probado.</td>
+                        </tr>
+                </table>
+                
+            </div>
+            <div class="info-table">
+                <table>
+                    <tr>
+                        <td><strong>ID#</strong> 1.1.1 Software </td>
+                        <td><strong>Cuenta control ID#</strong> 1.1</td>
+                        <td><strong>Ultima Actualización</strong> 9 de mayo</td>
+                        <td><strong>Responsable</strong> Mariana Herrera Márquez</td>
+                    </tr>
+                        <tr>
+                            <td colspan="4"><strong>Descripción:</strong> Desarrollo del software de control para la plataforma local.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Criterio de aceptación: </strong> El software debe integrarse con los sensores y dispositivos de la guardería.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Entregables: </strong> Código fuente, manual de usuario, informe de pruebas.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Supuestos: </strong> Los sensores y dispositivos estarán disponibles para pruebas.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Recursos asignados: </strong> 2 desarrolladores, 1 tester, 3 computadoras.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Duración: </strong> 15 días hábiles</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Hitos: </strong> 9 mayo: Software integrado y probado.</td>
+                        </tr>
+                </table>
+                
+            </div>
+            <div class="info-table">
+                <table>
+                    <tr>
+                        <td><strong>ID#</strong> 1.1.1 Redes </td>
+                        <td><strong>Cuenta control ID#</strong> 1.1</td>
+                        <td><strong>Ultima Actualización</strong> 18 de mayo</td>
+                        <td><strong>Responsable</strong> Mariana Herrera Márquez</td>
+                    </tr>
+                        <tr>
+                            <td colspan="4"><strong>Descripción:</strong> Configuración de la red local para conectar dispositivos y la plataforma.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Criterio de aceptación: </strong> La red debe soportar al menos 50 dispositivos simultáneamente.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Entregables: </strong> Diagrama de red, informe de configuración, informe de pruebas.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Supuestos: </strong> El proveedor de internet garantizará la conectividad.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Recursos asignados: </strong> 1 administrador de redes, 1 técnico, equipos de red.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Duración: </strong> 10 días hábiles</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Hitos: </strong> 18 mayo: Red configurada y probada.</td>
+                        </tr>
+                </table>
+                
+            </div>
+            <div class="info-table">
+                <table>
+                    <tr>
+                        <td><strong>ID#</strong> 1.1.1 Configuración de la red local.</td>
+                        <td><strong>Cuenta control ID#</strong> 1.1</td>
+                        <td><strong>Ultima Actualización</strong> 28 de abril </td>
+                        <td><strong>Responsable</strong> Mariana Herrera Márquez</td>
+                    </tr>
+                        <tr>
+                            <td colspan="4"><strong>Descripción:</strong> Configurar la red local para conectar los dispositivos de los locales</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Criterio de aceptación: </strong> Que las redes locales funciones correctamente</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Entregables: </strong> Diagrama de la red y conexiones funcionales</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Supuestos: </strong> La red funcionara correctamente en la zona local</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Recursos asignados: </strong> 1 administrador de redes, 1 técnico, equipos de red.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Duración: </strong> 2 días hábiles</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Hitos: </strong> 28 abril : Red configurada y aprobada</td>
+                        </tr>
+                </table>
+                
+            </div>
+            <div class="info-table">
+                <table>
+                    <tr>
+                        <td><strong>ID#</strong> 1.1.1 Conexión de dispositivos a la red.</td>
+                        <td><strong>Cuenta control ID#</strong> 1.1</td>
+                        <td><strong>Ultima Actualización</strong> 30 de abril </td>
+                        <td><strong>Responsable</strong> Mariana Herrera Márquez</td>
+                    </tr>
+                        <tr>
+                            <td colspan="4"><strong>Descripción:</strong> Los dispositivos están conectados correctamente a la red y funcionando</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Criterio de aceptación: </strong> Los dispositivos funcionan correctamente y tiene buena conexión</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Entregables: </strong> El diagrama de las conexiones de los dispositivos a la red y la funcionalidad correcta de estos mismos</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Supuestos: </strong> La red funcionara correctamente junto a los dispositivos</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Recursos asignados: </strong> 1 administrador de redes, 1 técnico, equipos de red.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Duración: </strong> 2 Días hábiles</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Hitos: </strong> 30 abril: Red configurada y aprobada</td>
+                        </tr>
+                </table>
+                
+            </div>
+            <div class="info-table">
+                <table>
+                    <tr>
+                        <td><strong>ID#</strong> 1.1.1 Seguridad de la red.</td>
+                        <td><strong>Cuenta control ID#</strong> 1.1</td>
+                        <td><strong>Ultima Actualización</strong> 18 de mayo </td>
+                        <td><strong>Responsable</strong> Mariana Herrera Márquez</td>
+                    </tr>
+                        <tr>
+                            <td colspan="4"><strong>Descripción:</strong> Configurar la red para que sea segura tanto en entrada como salida</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Criterio de aceptación: </strong> La red es segura tanto en entrada como en salida y funciona correctamente</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Entregables: </strong> Planeación completa de las configuraciones de red y la topología correcta de esta misma</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Supuestos: </strong> La red estará protegida y funcionará correctamente</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Recursos asignados: </strong> 1 administrador de redes, 1 técnico, equipos de red.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Duración: </strong> 2 días hábiles</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Hitos: </strong> 18 de mayo: Red configurada y aprobada</td>
+                        </tr>
+                </table>
+                
+            </div>
+            </div>
+            
+        </div>
+        <div class="subsection">
+            <div class="subsection-title" onclick="toggleSubsection(1)">1.3 Aplicación Móvil</div>
+            <div class="subcontent">
+                <div class="info-table">
+                    <table>
+                        <tr>
+                            <td><strong>ID#</strong> 1.1.1 Diseño de la interfaz de usuario (UI/UX).</td>
+                            <td><strong>Cuenta control ID#</strong> 1.2</td>
+                            <td><strong>Ultima Actualización</strong> 17 de abril</td>
+                            <td><strong>Responsable</strong> Diego Alejandro Rodríguez Valencia</td>
+                        </tr>
+                            <tr>
+                                <td colspan="4"><strong>Descripción:</strong> Diseño de la interfaz de usuario (UI/UX) para la aplicación móvil.</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><strong>Criterio de aceptación: </strong> La interfaz debe ser intuitiva y seguir las guías de diseño de iOS y Android</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><strong>Entregables: </strong> Wireframes, prototipos, guía de estilo.</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><strong>Supuestos: </strong> Los requisitos de la interfaz estarán claramente definidos.</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><strong>Recursos asignados: </strong> 1 diseñador UI/UX, 1 desarrollador, 2 computadoras.</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><strong>Duración: </strong> 10 días hábiles</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><strong>Hitos: </strong> 17 abril: Diseño de la interfaz aprobado.</td>
+                            </tr>
+                    </table>
+                </div>
+               <div class="info-table">
+                <table>
+                    <tr>
+                        <td><strong>ID#</strong> 1.1.1 Prototipado de la aplicación</td>
+                        <td><strong>Cuenta control ID#</strong> 1.2</td>
+                        <td><strong>Ultima Actualización</strong> </td>
+                        <td><strong>Responsable</strong> Diego Alejandro Rodríguez Valencia</td>
+                    </tr>
+                        <tr>
+                            <td colspan="4"><strong>Descripción:</strong> Descripción: Creación de un prototipo funcional de la aplicación móvil.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Criterio de aceptación: </strong>Criterio de aceptación: El prototipo debe reflejar la funcionalidad y diseño de la aplicación.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Entregables: </strong> Prototipo funcional, informe de prototipado, manual de usuario.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Supuestos: </strong> El diseño de la interfaz estará aprobado.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Recursos asignados: </strong> Recursos asignados: 1 diseñador UI/UX, 1 desarrollador, 2 computadoras.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Duración: </strong> 5 días hábiles</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Hitos: </strong> 22 abril: Prototipo completado y aprobado. </td>
+                        </tr>
+                </table>
+                
+            </div>
+            <div class="info-table">
+                <table>
+                    <tr>
+                        <td><strong>ID#</strong> 1.1.1 Desarrollo del frontend móvil.</td>
+                        <td><strong>Cuenta control ID#</strong> 1.2</td>
+                        <td><strong>Ultima Actualización</strong> 22 de abril</td>
+                        <td><strong>Responsable</strong> Diego Alejandro Rodríguez Valencia</td>
+                    </tr>
+                        <tr>
+                            <td colspan="4"><strong>Descripción:</strong> Desarrollo del código frontend para la aplicación móvil.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Criterio de aceptación: </strong> El frontend debe ser funcional y estar integrado con el backend.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Entregables: </strong> Código frontend, informe de implementación, manual de usuario.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Supuestos: </strong> El diseño de la interfaz estará aprobado.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Recursos asignados: </strong> 2 desarrolladores móviles, 1 tester, 3 computadoras.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Duración: </strong> 15 días hábiles</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Hitos: </strong> 22 abril: Frontend móvil desarrollado y probado.</td>
+                        </tr>
+                </table>
+                
+            </div>
+            <div class="info-table">
+                <table>
+                    <tr>
+                        <td><strong>ID#</strong> 1.1.1 Integración con el backend.</td>
+                        <td><strong>Cuenta control ID#</strong> 1.2</td>
+                        <td><strong>Ultima Actualización</strong> 3 de mayo </td>
+                        <td><strong>Responsable</strong> Diego Alejandro Rodríguez Valencia</td>
+                    </tr>
+                        <tr>
+                            <td colspan="4"><strong>Descripción:</strong> Integración del frontend móvil con el backend para sincronización de datos.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Criterio de aceptación: </strong> La integración debe ser eficiente y sin errores.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Entregables: </strong> Scripts de integración, informe de pruebas, manual de integración.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Supuestos: </strong> El backend estará disponible para integración.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Recursos asignados: </strong> 1 desarrollador móvil, 1 desarrollador backend, 2 computadoras.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Duración: </strong> 10 días hábiles</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Hitos: </strong> 3 mayo: Integración completada y probada.</td>
+                        </tr>
+                </table>
+                
+            </div>              
+            <div class="info-table">
+                <table>
+                    <tr>
+                        <td><strong>ID#</strong> 1.1.1 Pruebas de funcionalidad.</td>
+                        <td><strong>Cuenta control ID#</strong> 1.2</td>
+                        <td><strong>Ultima Actualización</strong> 9 de mayo </td>
+                        <td><strong>Responsable</strong> Diego Alejandro Rodríguez Valencia</td>
+                    </tr>
+                        <tr>
+                            <td colspan="4"><strong>Descripción:</strong> Realización de pruebas funcionales para garantizar el correcto funcionamiento de la aplicación.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Criterio de aceptación: </strong> La aplicación debe cumplir con los requisitos funcionales</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Entregables: </strong> Informe de pruebas, registro de incidencias, recomendaciones.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Supuestos: </strong> El frontend y backend estarán integrados.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Recursos asignados: </strong> 1 tester, herramientas de pruebas, 2 computadoras.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Duración: </strong> 5 días hábiles</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Hitos: </strong> 9 mayo: Pruebas de funcionalidad completadas y aprobadas.</td>
+                        </tr>
+                </table>
+                
+            </div>
+            <div class="info-table">
+                <table>
+                    <tr>
+                        <td><strong>ID#</strong> 1.1.1 Implementación de notificaciones push</td>
+                        <td><strong>Cuenta control ID#</strong> 1.2</td>
+                        <td><strong>Ultima Actualización</strong> 26 de abril </td>
+                        <td><strong>Responsable</strong> Diego Alejandro Rodríguez Valencia</td>
+                    </tr>
+                        <tr>
+                            <td colspan="4"><strong>Descripción:</strong> Implementación de notificaciones push en la aplicación móvil.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Criterio de aceptación: </strong> Las notificaciones deben llegar en tiempo real y ser personalizadas.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Entregables: </strong> Configuración de notificaciones, informe de pruebas, manual de usuario.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Supuestos: </strong> El backend estará disponible para integración.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Recursos asignados: </strong> 1 desarrollador móvil, 1 tester, 2 computadoras.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Duración: </strong> 4 días hábiles</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Hitos: </strong> 26 abril: Notificaciones push implementadas y probadas.</td>
+                        </tr>
+                </table>
+                
+            </div>
+            <div class="info-table">
+                <table>
+                    <tr>
+                        <td><strong>ID#</strong> 1.1.1 Configuración de alertas personalizadas.</td>
+                        <td><strong>Cuenta control ID#</strong> 1.2</td>
+                        <td><strong>Ultima Actualización</strong> 26 de abril</td>
+                        <td><strong>Responsable</strong> Diego Alejandro Rodríguez Valencia</td>
+                    </tr>
+                        <tr>
+                            <td colspan="4"><strong>Descripción:</strong>  Configuración de alertas personalizadas basadas en las preferencias del usuario</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Criterio de aceptación: </strong> Las alertas deben ser configurables y llegar en tiempo real </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Entregables: </strong> Configuración de alertas, informe de pruebas, manual de usuario. </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Supuestos: </strong> El sistema de notificaciones estará implementado </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Recursos asignados: </strong> 1 desarrollador móvil, 1 tester, 2 computadoras </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Duración: </strong> 4 días hábiles </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><strong>Hitos: </strong> 26 abril: Alertas personalizadas configuradas y probadas </td>
+                        </tr>
+                    </table>
+            </div>
+            </div>
+        </div>
+        </div>
+        <div class="subsection">
+            <div class="subsection-title" onclick="toggleSubsection(2)">1.3 Infraestructura</div>
+            <div class="subcontent">
+                <div class="info-table">
+                    <table>
+                        <tr>
+                            <td><strong>ID#</strong> 1.1.1 Diseño de las instalaciones </td>
+                            <td><strong>Cuenta control ID#</strong> 1.3</td>
+                            <td><strong>Ultima Actualización</strong> 30 de abril</td>
+                            <td><strong>Responsable</strong> Edwin René González Bonilla</td>
+                        </tr>
+                            <tr>
+                                <td colspan="4"><strong>Descripción:</strong> Diseño de las instalaciones físicas de la guardería (jaulas, áreas de juego).</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><strong>Criterio de aceptación: </strong> El diseño debe cumplir con normas de seguridad y comodidad para mascotas.</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><strong>Entregables: </strong> Planos de instalaciones, informe de diseño, presupuesto. </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><strong>Supuestos: </strong> El espacio físico estará disponible para la construcción. </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><strong>Recursos asignados: </strong> 1 arquitecto, 1 ingeniero, herramientas de diseño.</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><strong>Duración: </strong> 15 días hábiles</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><strong>Hitos: </strong> 30 abril: Diseño aprobado. </td>
+                            </tr>
+                    </table>
+                    
+                </div>
+                <div class="info-table">
+                    <table>
+                        <tr>
+                            <td><strong>ID#</strong> 1.1.1 Mantenimiento</td>
+                            <td><strong>Cuenta control ID#</strong> 1.1</td>
+                            <td><strong>Ultima Actualización</strong> Mensualmente</td>
+                            <td><strong>Responsable</strong> Edwin René González Bonilla</td>
+                        </tr>
+                            <tr>
+                                <td colspan="4"><strong>Descripción:</strong> Planificación y ejecución del mantenimiento preventivo y correctivo de la infraestructura.</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><strong>Criterio de aceptación: </strong>Criterio de aceptación: La infraestructura debe estar operativa al 99% del tiempo.</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><strong>Entregables: </strong> Plan de mantenimiento, informe de incidencias, informe de rendimiento.</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><strong>Supuestos: </strong> Los recursos para mantenimiento estarán disponibles.</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><strong>Recursos asignados: </strong> 1 técnico de mantenimiento, herramientas, repuestos.</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><strong>Duración: </strong> Continuo </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><strong>Hitos: </strong> Mensual: Revisión y actualización del plan de mantenimiento.</td>
+                            </tr>
+                    </table>
+                    
+                </div>
+                <div class="info-table">
+                    <table>
+                        <tr>
+                            <td><strong>ID#</strong> 1.1.1 Instalación de sistemas de seguridad (cámaras, cerraduras).</td>
+                            <td><strong>Cuenta control ID#</strong> 1.3</td>
+                            <td><strong>Ultima Actualización</strong> 26 de abril </td>
+                            <td><strong>Responsable</strong> Edwin René González Bonilla</td>
+                        </tr>
+                            <tr>
+                                <td colspan="4"><strong>Descripción:</strong> Instalación de cámaras de vigilancia y cerraduras automáticas en las instalaciones de la guardería </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><strong>Criterio de aceptación: </strong> Los sistemas de seguridad deben estar instalados y funcionando correctamente</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><strong>Entregables: </strong> Listado de dispositivos instalados, informe de instalación, informe de pruebas </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><strong>Supuestos: </strong> Los dispositivos de seguridad estarán disponibles para instalación </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><strong>Recursos asignados: </strong> 2 técnicos de seguridad, herramientas de instalación, manuales </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><strong>Duración: </strong> 5 días hábiles </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><strong>Hitos: </strong> 26 abril: Sistemas de seguridad instalados y probados </td>
+                            </tr>
+                    </table>
+                    
+                </div>
+                <div class="info-table">
+                    <table>
+                        <tr>
+                            <td><strong>ID#</strong> 1.1.1 Monitoreo de seguridad 24/7.</td>
+                            <td><strong>Cuenta control ID#</strong> 1.3</td>
+                            <td><strong>Ultima Actualización</strong> 21 de abril </td>
+                            <td><strong>Responsable</strong> Edwin René González Bonilla</td>
+                        </tr>
+                            <tr>
+                                <td colspan="4"><strong>Descripción:</strong> Implementación de un sistema de monitoreo continuo de las cámaras y dispositivos de seguridad </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><strong>Criterio de aceptación: </strong> El monitoreo debe estar activo las 24 /7</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><strong>Entregables: </strong> Configuración del sistema de monitoreo, informe de pruebas, manual de operación </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><strong>Supuestos: </strong> Las cámaras y dispositivos estarán instalados y funcionando </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><strong>Recursos asignados: </strong> 1 técnico de monitoreo, 1 especialista en seguridad, 2 computadoras </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><strong>Duración: </strong> 5 días hábiles </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><strong>Hitos: </strong> 21 abril: Monitoreo 24/7 implementado y operativo.</td>
+                            </tr>
+                    </table>
+                    
+                </div>
+            </div>
+        </div>
+        
+
+    <script>
+        function showTab(index) {
+            let tabs = document.querySelectorAll('.tab');
+            let contents = document.querySelectorAll('.content');
+
+            tabs.forEach((tab, i) => {
+                tab.classList.toggle('active', i === index);
+                contents[i].classList.toggle('active', i === index);
+            });
+        }
+        function redirigir() {
+             window.location.href = "pawmatch.html";
+         }
+        function toggleSubsection(index) {
+            let subcontent = document.querySelectorAll('.subcontent')[index];
+            subcontent.style.display = subcontent.style.display === "block" ? "none" : "block";
+        }
+    </script>
+
+</body>
+</html>
