@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paw Match</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.ico">
+
+</head>
+<style>
+    body{
+        
+    .portfolio-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin-top: 100px; 
+}
+
+
+.portfolio-item {
+    background: rgb(202, 236, 237);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    width: 300px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+.portfolio-item img {
+    width: 100%;
+    max-width: 250px;
+    height: 230px;
+    border-radius: 8px;
+}
+
+
+.portfolio-item .button {
+    display: inline-block;
+    background: #c380f2;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: background 0.3s ease-in-out;
+}
+
+
+.portfolio-item .button:hover {
+    background: #6eb9de;
+ 
+}
+
+
+@media (max-width: 500px) {
+    .portfolio-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+    }
+</style>
+<body>
+
+    <header>
+        <h1>Paw Match</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Acerca</a></li>
+                <li><a href="caracteristicas.html">Características</a></li>
+                <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="portafolio.html">Portafolio</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="portfolio-container">
+        <div class="portfolio-item">
+            <img src="tec.jpg" alt="EDT">
+            <h3>Oferta Técnica</h3>
+            <a href="Propuesta Tecnica.pdf" class="button">Ver más</a>
+        </div>
+
+        <div class="portfolio-item">
+            <img src="econo.jpg" alt="EDT">
+            <h3>Oferta Económica</h3>
+            <a href="OFERTA ECONÓMICA.pdf" class="button">Ver más</a>
+        </div>
+    </div>
+
+    <footer>
+        
+    <p>🐱2024 Paw Match. Todos los derechos reservados.</p>
+</footer>
+
+
+</body>
+</html>

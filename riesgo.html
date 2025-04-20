@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paw Match</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.ico">
+
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+    
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-color: #f5f5f5;
+        font-family: 'Merriweather', serif;
+    }
+    
+    .header-container {
+        background-color: #c380f2;
+        color: white;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .header-image {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+        object-fit: cover;
+        display: block;
+    }
+    
+    .header-content {
+        padding: 1rem;
+    }
+    
+    h1 {
+        text-align: center;
+        margin-bottom: 1rem;
+        font-family: 'Merriweather', serif;
+    }
+    
+    nav ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    nav a {
+        color: white;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+        font-family: 'Merriweather', serif;
+    }
+    
+    nav a:hover {
+        background-color: rgba(255,255,255,0.2);
+    }
+    
+    main {
+        flex: 1;
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+        margin-top: 40px;
+    }
+    
+    .risk-table-container {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+        overflow-x: auto;
+        margin-right: 5px;
+    }
+    
+    h2.table-title {
+        color: #6fe3cc;
+        margin-bottom: 1.5rem;
+        text-align: center;
+        margin-top: 10px;
+        font-family: 'Merriweather', serif;
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9em;
+        min-width: 800px;
+    }
+    
+    table thead tr {
+        
+        color: #ffffff;
+        text-align: left;
+        font-family: 'Merriweather', serif;
+    }
+    
+    table th,
+    table td {
+        padding: 12px 15px;
+        border: 1px solid #dddddd;
+    }
+    
+    table tbody tr {
+        border-bottom: 1px solid #dddddd;
+    }
+    
+    table tbody tr:nth-of-type(even) {
+        background-color: #f3f3f3;
+    }
+    
+    footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 1.5rem;
+        margin-top: auto;
+    }
+    
+    .footer-info {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .footer-info p {
+        margin: 0;
+    }
+    
+    @media (max-width: 768px) {
+        nav ul {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer-info {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .header-image {
+            max-height: 150px;
+        }
+    }
+
+    .ini{
+    background-color: #6C5F80;
+   
+}
+
+.eje{
+    background-color: #C18DB4;
+}
+
+.mon{
+    background-color: #9DB0CE;
+}
+
+</style>
+
+<body>
+
+    <header>
+        <h1>Paw Match</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Acerca</a></li>
+                <li><a href="caracteristicas.html">Características</a></li>
+                <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="portafolio.html">Portafolio</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="risk-table-container">
+            <h2 class="table-title">Plataforma Local</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="ini">#</th>
+                        <th class="ini">Proceso</th>
+                        <th class="ini">Tipo de riesgo</th>
+                        <th class="ini">Riesgo</th>
+                        <th class="ini">Posible resultado (Entonces)</th>
+                        <th class="ini">Sintoma</th>
+                        <th class="ini">Probabilidad</th>
+                        <th class="ini">Impacto</th>
+                        <th class="ini">Nivel de prioridad</th>
+                        <th class="ini">Evaluación Valor</th>
+                        <th class="ini">Evaluación Nivel</th>
+                        <th class="ini">Estrategia</th>
+                        <th class="ini">Respuesta</th>
+                        <th class="ini">Responsable de la acción de respuesta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Diseño de la base de datos.</td>
+                        <td>Estructural</td>
+                        <td>Mala normalizacion de la base de datos</td>
+                        <td>Redundancia y dificultad en consultas</td>
+                        <td>Datos duplicados y rendimiento lento</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>6</td>
+                        <td>Medio</td>
+                        <td>Medio</td>
+                        <td>Mitigación</td>
+                        <td>Aplicar reglas de normalización en el diseño de la BD</td>
+                        <td>Mariana Herrera Márquez</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Diseño de la base de datos.</td>
+                        <td>Rendimiento</td>
+                        <td>Índices mal definidos o inexistentes</td>
+                        <td>Consultas lentas y baja eficiencia</td>
+                        <td>Retrasos en la ejecución de consultas</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>Medio</td>
+                        <td>Medio</td>
+                        <td>Mitigación</td>
+                        <td>Definir índices adecuados para las consultas más frecuentes</td>
+                        <td>Mariana Herrera Márquez</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Diseño de la base de datos.</td>
+                        <td>Seguridad</td>
+                        <td>Falta de restricciones en los accesos</td>
+                        <td>Acceso no autorizado a los datos</td>
+                        <td>Datos expuestos o manipulados sin autorización</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>Alto</td>
+                        <td>Alto</td>
+                        <td>Mitigación</td>
+                        <td>Implementar roles y permisos adecuados</td>
+                        <td>Mariana Herrera Márquez</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Diseño de la base de datos.</td>
+                        <td>Seguridad</td>
+                        <td>Falta de control de acceso</td>
+                        <td>Exposición de datos sensibles</td>
+                        <td>Usuarios no autorizados accediendo a datos</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>Alto</td>
+                        <td>Alto</td>
+                        <td>Mitigación</td>
+                        <td>Implementar roles y permisos adecuados</td>
+                        <td>Mariana Herrera Márquez</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Diseño de la base de datos.</td>
+                        <td>Conectividad</td>
+                        <td>Configuración incorrecta de conexiones</td>
+                        <td>Fallo en la comunicación con la base de datos</td>
+                        <td>Errores de conexión en las aplicaciones</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>6</td>
+                        <td>Medio</td>
+                        <td>Medio</td>
+                        <td>Mitigación</td>
+                        <td>Verificar configuraciones de red y tiempos de espera</td>
+                        <td>Mariana Herrera Márquez</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="ini">#</th>
+                        <th class="ini">Proceso</th>
+                        <th class="ini">Tipo de riesgo</th>
+                        <th class="ini">Riesgo</th>
+                        <th class="ini">Posible resultado (Entonces)</th>
+                        <th class="ini">Sintoma</th>
+                        <th class="ini">Probabilidad</th>
+                        <th class="ini">Impacto</th>
+                        <th class="ini">Nivel de prioridad</th>
+                        <th class="ini">Evaluación Valor</th>
+                        <th class="ini">Evaluación Nivel</th>
+                        <th class="ini">Estrategia</th>
+                        <th class="ini">Respuesta</th>
+                        <th class="ini">Responsable de la acción de respuesta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Hardware</td>
+                        <td>Fallo</td>
+                        <td>Sobrecalentamiento de componentes</td>
+                        <td>Daños en el hardware y fallos en el sistema</td>
+                        <td>Apagados inesperados o bajo rendimiento</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>6</td>
+                        <td>Medio</td>
+                        <td>Medio</td>
+                        <td>Mitigación</td>
+                        <td>Implementar sistemas de refrigeración y mantenimiento regular</td>
+                        <td>Mariana Herrera Márquez</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Hardware</td>
+                        <td>Desgaste</td>
+                        <td>Componentes envejecidos o defectuosos</td>
+                        <td>Fallos recurrentes y pérdida de eficiencia</td>
+                        <td>Lentitud o errores frecuentes</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>Medio</td>
+                        <td>Medio</td>
+                        <td>Mitigación</td>
+                        <td>Sustituir hardware obsoleto y realizar revisiones periódicas</td>
+                        <td>Mariana Herrera Márquez</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Hardware</td>
+                        <td>Seguridad</td>
+                        <td>Acceso no autorizado a dispositivos</td>
+                        <td>Robo o alteración de datos</td>
+                        <td>Uso no autorizado de equipos</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>Alto</td>
+                        <td>Alto</td>
+                        <td>Mitigación</td>
+                        <td>Implementar controles de acceso y cifrado de discos</td>
+                        <td>Mariana Herrera Márquez</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Hardware</td>
+                        <td>Pérdida de datos</td>
+                        <td>Fallo en discos duros o SSD</td>
+                        <td>Pérdida irreversible de información</td>
+                        <td>Archivos corruptos o inaccesibles</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>Alto</td>
+                        <td>Alto</td>
+                        <td>Mitigación</td>
+                        <td>Implementar redundancia RAID y copias de seguridad</td>
+                        <td>Mariana Herrera Márquez</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Hardware</td>
+                        <td>Disponibilidad</td>
+                        <td>Fallos en la fuente de alimentación</td>
+                        <td>Apagones y daños en hardware</td>
+                        <td>Reinicios inesperados y pérdida de datos</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>6</td>
+                        <td>Medio</td>
+                        <td>Medio</td>
+                        <td>Mitigación</td>
+                        <td>Usar sistemas de respaldo como UPS y reguladores de voltaje</td>
+                        <td>Mariana Herrera Márquez</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="ini">#</th>
+                        <th class="ini">Proceso</th>
+                        <th class="ini">Tipo de riesgo</th>
+                        <th class="ini">Riesgo</th>
+                        <th class="ini">Posible resultado (Entonces)</th>
+                        <th class="ini">Sintoma</th>
+                        <th class="ini">Probabilidad</th>
+                        <th class="ini">Impacto</th>
+                        <th class="ini">Nivel de prioridad</th>
+                        <th class="ini">Evaluación Valor</th>
+                        <th class="ini">Evaluación Nivel</th>
+                        <th class="ini">Estrategia</th>
+                        <th class="ini">Respuesta</th>
+                        <th class="ini">Responsable de la acción de respuesta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Software</td>
+                        <td>Bug</td>
+                        <td>Errores en el código</td>
+                        <td>Fallos en la funcionalidad</td>
+                        <td>Comportamiento inesperado o bloqueos</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>Alto</td>
+                        <td>Alto</td>
+                        <td>Mitigación</td>
+                        <td>Realizar pruebas y depuración antes del lanzamiento</td>
+                        <td>Mariana Herrera Márquez</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Software</td>
+                        <td>Seguridad</td>
+                        <td>Vulnerabilidades en el código</td>
+                        <td>Explotación por atacantes</td>
+                        <td>Filtración o robo de datos</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>Alto</td>
+                        <td>Alto</td>
+                        <td>Mitigación</td>
+                        <td>Aplicar buenas prácticas de seguridad y actualizaciones</td>
+                        <td>Mariana Herrera Márquez</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Software</td>
+                        <td>Desactualización</td>
+                        <td>No actualizar el software</td>
+                        <td>Incompatibilidades y fallos de seguridad</td>
+                        <td>Errores con nuevas versiones de sistemas</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>6</td>
+                        <td>Medio</td>
+                        <td>Medio</td>
+                        <td>Mitigación</td>
+                        <td>Mantener el software actualizado y realizar pruebas previas</td>
+                        <td>Mariana Herrera Márquez</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Software</td>
+                        <td>Configuración</td>
+                        <td>Configuración incorrecta</td>
+                        <td>Mal funcionamiento o errores críticos</td>
+                        <td>Fallos al iniciar o ejecutar el programa</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>6</td>
+                        <td>Medio</td>
+                        <td>Medio</td>
+                        <td>Mitigación</td>
+                        <td>Verificar configuraciones y documentar correctamente</td>
+                        <td>Mariana Herrera Márquez</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Software</td>
+                        <td>Rendimiento</td>
+                        <td>Uso ineficiente de recursos</td>
+                        <td>Lentitud o sobrecarga del sistema</td>
+                        <td>Procesos tardan más de lo esperado</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>Medio</td>
+                        <td>Medio</td>
+                        <td>Mitigación</td>
+                        <td>Optimizar código y uso de memoria</td>
+                        <td>Mariana Herrera Márquez</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="ini">#</th>
+                        <th class="ini">Proceso</th>
+                        <th class="ini">Tipo de riesgo</th>
+                        <th class="ini">Riesgo</th>
+                        <th class="ini">Posible resultado (Entonces)</th>
+                        <th class="ini">Sintoma</th>
+                        <th class="ini">Probabilidad</th>
+                        <th class="ini">Impacto</th>
+                        <th class="ini">Nivel de prioridad</th>
+                        <th class="ini">Evaluación Valor</th>
+                        <th class="ini">Evaluación Nivel</th>
+                        <th class="ini">Estrategia</th>
+                        <th class="ini">Respuesta</th>
+                        <th class="ini">Responsable de la acción de respuesta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Redes</td>
+                        <td>Configuración</td>
+                        <td>Mala configuración de dispositivos</td>
+                        <td>Conectividad inestable o inoperativa</td>
+                        <td>Pérdida de conexión o fallos intermitentes</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>6</td>
+                        <td>Medio</td>
+                        <td>Medio</td>
+                        <td>Mitigación</td>
+                        <td>Verificar y documentar configuraciones correctamente</td>
+                        <td>Mariana Herrera Márquez</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Redes</td>
+                        <td>Seguridad</td>
+                        <td>Falta de cifrado en la comunicación</td>
+                        <td>Robo de información</td>
+                        <td>Acceso no autorizado a datos</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>Alto</td>
+                        <td>Alto</td>
+                        <td>Mitigación</td>
+                        <td>Implementar protocolos seguros como WPA3 o VPN</td>
+                        <td>Mariana Herrera Márquez</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Redes</td>
+                        <td>Disponibilidad</td>
+                        <td>No monitorear el tráfico</td>
+                        <td>Caídas inesperadas y problemas de rendimiento</td>
+                        <td>Lentitud o desconexiones</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>Medio</td>
+                        <td>Medio</td>
+                        <td>Mitigación</td>
+                        <td>Implementar monitoreo y alertas en tiempo real</td>
+                        <td>Mariana Herrera Márquez</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Redes</td>
+                        <td>Fallo</td>
+                        <td>Fallo en routers o switches</td>
+                        <td>Interrupción total de la red</td>
+                        <td>Pérdida de conexión en toda la infraestructura</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>6</td>
+                        <td>Medio</td>
+                        <td>Medio</td>
+                        <td>Mitigación</td>
+                        <td>Tener dispositivos de respaldo y redundancia</td>
+                        <td>Mariana Herrera Márquez</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Redes</td>
+                        <td>Ataques</td>
+                        <td>Ataques DDoS o intrusiones</td>
+                        <td>Caída de servicios y brechas de seguridad</td>
+                        <td>Servicios inaccesibles o datos comprometidos</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>Alto</td>
+                        <td>Alto</td>
+                        <td>Mitigación</td>
+                        <td>Implementar firewalls y sistemas de prevención de intrusos</td>
+                        <td>Mariana Herrera Márquez</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <h2 class="table-title">Aplicación móvil</h2>
+            <br>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="eje">#</th>
+                        <th class="eje">Proceso</th>
+                        <th class="eje">Tipo de riesgo</th>
+                        <th class="eje">Riesgo</th>
+                        <th class="eje">Posible resultado (Entonces)</th>
+                        <th class="eje">Sintoma</th>
+                        <th class="eje">Probabilidad</th>
+                        <th class="eje">Impacto</th>
+                        <th class="eje">Nivel de prioridad</th>
+                        <th class="eje">Evaluación Valor</th>
+                        <th class="eje">Evaluación Nivel</th>
+                        <th class="eje">Estrategia</th>
+                        <th class="eje">Respuesta</th>
+                        <th class="eje">Responsable de la acción de respuesta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Desarrollo Frontend</td>
+                        <td>Diseño</td>
+                        <td>Cambios en el diseño de la interfaz de usuario</td>
+                        <td>Retrasos en el desarrollo</td>
+                        <td>Solicitudes de cambios en el diseño después de iniciar el desarrollo</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>6</td>
+                        <td>Medio</td>
+                        <td>Medio</td>
+                        <td>Transferencia</td>
+                        <td>Establecer un proceso de aprobación de diseños antes del desarrollo</td>
+                        <td>Diego Alejandro Valencia</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Desarrollo Frontend</td>
+                        <td>Diseño</td>
+                        <td>Diseño no responsivo o no adaptable a diferentes tamaños de pantalla</td>
+                        <td>Mala experiencia del usuario</td>
+                        <td>Quejas de usuarios sobre problemas de visualización en ciertos dispositivos</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>Medio</td>
+                        <td>Medio</td>
+                        <td>Mitigación</td>
+                        <td>Implementar pruebas en múltiples dispositivos y ajustar el diseño responsivo</td>
+                        <td>Diego Alejandro Valencia</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Desarrollo Frontend</td>
+                        <td>Diseño</td>
+                        <td>Diseño no intuitivo o difícil de usar</td>
+                        <td>Frustración del usuario y posible abandono de la aplicación</td>
+                        <td>Retroalimentación negativa de usuarios durante pruebas de usabilidad</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>6</td>
+                        <td>Medio</td>
+                        <td>Medio</td>
+                        <td>Mitigación</td>
+                        <td>Realizar pruebas de usabilidad y ajustar el diseño basado en feedback</td>
+                        <td>Diego Alejandro Valencia</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Desarrollo Frontend</td>
+                        <td>Diseño</td>
+                        <td>Falta de alineación entre diseño y funcionalidad</td>
+                        <td>Interfaz que no refleja correctamente las funcionalidades de la aplicación</td>
+                        <td>Confusión del usuario y errores en el uso de la aplicación</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>Medio</td>
+                        <td>Medio</td>
+                        <td>Mitigación</td>
+                        <td>Revisar y alinear el diseño con las funcionalidades desarrolladas</td>
+                        <td>Diego Alejandro Valencia</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Desarrollo Frontend</td>
+                        <td>Diseño</td>
+                        <td>Falta de consistencia en el diseño de la interfaz</td>
+                        <td>Confusión del usuario y percepción de falta de profesionalismo</td>
+                        <td>Inconsistencias visuales en diferentes pantallas de la aplicación</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>Alto</td>
+                        <td>Alto</td>
+                        <td>Mitigación</td>
+                        <td>Establecer y seguir una guía de estilo consistente</td>
+                        <td>Diego Alejandro Valencia</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="eje">#</th>
+                        <th class="eje">Proceso</th>
+                        <th class="eje">Tipo de riesgo</th>
+                        <th class="eje">Riesgo</th>
+                        <th class="eje">Posible resultado (Entonces)</th>
+                        <th class="eje">Sintoma</th>
+                        <th class="eje">Probabilidad</th>
+                        <th class="eje">Impacto</th>
+                        <th class="eje">Nivel de prioridad</th>
+                        <th class="eje">Evaluación Valor</th>
+                        <th class="eje">Evaluación Nivel</th>
+                        <th class="eje">Estrategia</th>
+                        <th class="eje">Respuesta</th>
+                        <th class="eje">Responsable de la acción de respuesta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Integración con el backend.</td>
+                        <td>Técnico</td>
+                        <td>Problemas de integración con el backend</td>
+                        <td>Retrasos en el desarrollo y funcionalidades incompletas</td>
+                        <td>Errores en las llamadas a la API</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>6</td>
+                        <td>Medio</td>
+                        <td>Medio</td>
+                        <td>Mitigación</td>
+                        <td>Coordinar con el equipo de backend para resolver problemas</td>
+                        <td>Diego Alejandro Valencia</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Integración con el backend.</td>
+                        <td>Recursos</td>
+                        <td>Falta de disponibilidad de desarrolladores móviles</td>
+                        <td>Retrasos en el desarrollo y entrega</td>
+                        <td>Ausencia de desarrolladores o sobrecarga de trabajo</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>Medio</td>
+                        <td>Medio</td>
+                        <td>Mitigación</td>
+                        <td>Asignar recursos adicionales o redistribuir tareas</td>
+                        <td>Diego Alejandro Valencia</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Integración con el backend.</td>
+                        <td>Tiempo</td>
+                        <td>Retraso en la entrega del backend</td>
+                        <td>Desarrollo no puede iniciarse a tiempo</td>
+                        <td>Falta de disponibilidad del backend para integración</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>Medio</td>
+                        <td>Medio</td>
+                        <td>Mitigación</td>
+                        <td>Coordinar con el equipo de backend para asegurar disponibilidad</td>
+                        <td>Diego Alejandro Valencia</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Integración con el backend.</td>
+                        <td>Calidad</td>
+                        <td>Errores no detectados en las pruebas</td>
+                        <td>Bugs en producción que afectan la experiencia del usuario</td>
+                        <td>Aumento en el número de incidencias reportadas</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>Alto</td>
+                        <td>Alto</td>
+                        <td>Mitigación</td>
+                        <td>Implementar pruebas automatizadas y revisiones de código</td>
+                        <td>Diego Alejandro Valencia</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Integración con el backend.</td>
+                        <td>Tecnológico</td>
+                        <td>Incompatibilidad con versiones anteriores del sistema operativo</td>
+                        <td>Pérdida de usuarios que no pueden actualizar sus dispositivos</td>
+                        <td>Quejas de usuarios por problemas de compatibilidad</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>Alto</td>
+                        <td>Alto</td>
+                        <td>Aceptación</td>
+                        <td>Documentar limitaciones y ofrecer soporte para versiones compatibles</td>
+                        <td>Diego Alejandro Valencia</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="eje">#</th>
+                        <th class="eje">Proceso</th>
+                        <th class="eje">Tipo de riesgo</th>
+                        <th class="eje">Riesgo</th>
+                        <th class="eje">Posible resultado (Entonces)</th>
+                        <th class="eje">Sintoma</th>
+                        <th class="eje">Probabilidad</th>
+                        <th class="eje">Impacto</th>
+                        <th class="eje">Nivel de prioridad</th>
+                        <th class="eje">Evaluación Valor</th>
+                        <th class="eje">Evaluación Nivel</th>
+                        <th class="eje">Estrategia</th>
+                        <th class="eje">Respuesta</th>
+                        <th class="eje">Responsable de la acción de respuesta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Pruebas de funcionalidad.</td>
+                        <td>Cobertura</td>
+                        <td>No probar todas las funciones del sistema</td>
+                        <td>Errores en producción no detectados</td>
+                        <td>Funcionalidades fallando después del lanzamiento</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>6</td>
+                        <td>Medio</td>
+                        <td>Medio</td>
+                        <td>Mitigación</td>
+                        <td>Crear un plan de pruebas detallado y garantizar cobertura total</td>
+                        <td>Diego Alejandro Valencia</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Pruebas de funcionalidad.</td>
+                        <td>Configuración</td>
+                        <td>Entornos de prueba mal configurados</td>
+                        <td>Resultados inexactos en las pruebas</td>
+                        <td>Comportamiento diferente en producción</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>6</td>
+                        <td>Medio</td>
+                        <td>Medio</td>
+                        <td>Mitigación</td>
+                        <td>Asegurar que el entorno de prueba refleje el real</td>
+                        <td>Diego Alejandro Valencia</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Pruebas de funcionalidad.</td>
+                        <td>Errores</td>
+                        <td>No documentar ni analizar errores</td>
+                        <td>Bugs recurrentes y sin solución</td>
+                        <td>Reportes de fallos repetidos</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>6</td>
+                        <td>Medio</td>
+                        <td>Medio</td>
+                        <td>Mitigación</td>
+                        <td>Implementar un sistema de seguimiento y corrección de errores</td>
+                        <td>Diego Alejandro Valencia</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Pruebas de funcionalidad.</td>
+                        <td>Rendimiento</td>
+                        <td>Falta de pruebas automatizadas</td>
+                        <td>Retraso en la detección de errores</td>
+                        <td>Pruebas manuales tardan demasiado</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>6</td>
+                        <td>Medio</td>
+                        <td>Medio</td>
+                        <td>Mitigación</td>
+                        <td>Utilizar herramientas de automatización de pruebas</td>
+                        <td>Diego Alejandro Valencia</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Pruebas de funcionalidad.</td>
+                        <td>Seguridad</td>
+                        <td>No realizar pruebas de seguridad</td>
+                        <td>Vulnerabilidades no detectadas</td>
+                        <td>Filtración o robo de datos</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>6</td>
+                        <td>Medio</td>
+                        <td>Medio</td>
+                        <td>Mitigación</td>
+                        <td>Incluir pruebas de seguridad en el ciclo de desarrollo</td>
+                        <td>Diego Alejandro Valencia</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <h2 class="table-title">Infraestructura</h2>
+            <br>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="mon">#</th>
+                        <th class="mon">Proceso</th>
+                        <th class="mon">Tipo de riesgo</th>
+                        <th class="mon">Riesgo</th>
+                        <th class="mon">Posible resultado (Entonces)</th>
+                        <th class="mon">Sintoma</th>
+                        <th class="mon">Probabilidad</th>
+                        <th class="mon">Impacto</th>
+                        <th class="mon">Nivel de prioridad</th>
+                        <th class="mon">Evaluación Valor</th>
+                        <th class="mon">Evaluación Nivel</th>
+                        <th class="mon">Estrategia</th>
+                        <th class="mon">Respuesta</th>
+                        <th class="mon">Responsable de la acción de respuesta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Diseño de las instalaciones</td>
+                        <td>Configuración</td>
+                        <td>Mala distribución del espacio</td>
+                        <td>Ineficiencia en el uso de los recursos</td>
+                        <td>Espacios congestionados o subutilizados</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>Medio</td>
+                        <td>Medio</td>
+                        <td>Mitigación</td>
+                        <td>Realizar un análisis previo de distribución</td>
+                        <td>Edwin René González</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Diseño de las instalaciones</td>
+                        <td>Seguridad</td>
+                        <td>Falta de planificación en el cableado</td>
+                        <td>Riesgo de cortocircuitos o fallos eléctricos</td>
+                        <td>Apagones o sobrecargas frecuentes</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>6</td>
+                        <td>Medio</td>
+                        <td>Medio</td>
+                        <td>Mitigación</td>
+                        <td>Cumplir con normativas y usar materiales adecuados</td>
+                        <td>Edwin René González</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Diseño de las instalaciones</td>
+                        <td>Condiciones</td>
+                        <td>Mala ventilación en espacios críticos</td>
+                        <td>Sobrecalentamiento de equipos o incomodidad</td>
+                        <td>Temperaturas inestables</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>Alto</td>
+                        <td>Alto</td>
+                        <td>Mitigación</td>
+                        <td>Implementar sistemas de ventilación adecuados</td>
+                        <td>Edwin René González</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Diseño de las instalaciones</td>
+                        <td>Usabilidad</td>
+                        <td>No considerar accesibilidad para todos</td>
+                        <td>Dificultad en el uso de las instalaciones</td>
+                        <td>Espacios poco funcionales para algunos usuarios</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>Alto</td>
+                        <td>Alto</td>
+                        <td>Mitigación</td>
+                        <td>Diseñar cumpliendo normativas de accesibilidad</td>
+                        <td>Edwin René González</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Diseño de las instalaciones</td>
+                        <td>Seguridad</td>
+                        <td>Falta de medidas de seguridad física</td>
+                        <td>Acceso no autorizado o riesgos de robo</td>
+                        <td>Falta de control de acceso y videovigilancia</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>Alto</td>
+                        <td>Alto</td>
+                        <td>Mitigación</td>
+                        <td>Implementar sistemas de control de acceso y monitoreo</td>
+                        <td>Edwin René González</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="mon">#</th>
+                        <th class="mon">Proceso</th>
+                        <th class="mon">Tipo de riesgo</th>
+                        <th class="mon">Riesgo</th>
+                        <th class="mon">Posible resultado (Entonces)</th>
+                        <th class="mon">Sintoma</th>
+                        <th class="mon">Probabilidad</th>
+                        <th class="mon">Impacto</th>
+                        <th class="mon">Nivel de prioridad</th>
+                        <th class="mon">Evaluación Valor</th>
+                        <th class="mon">Evaluación Nivel</th>
+                        <th class="mon">Estrategia</th>
+                        <th class="mon">Respuesta</th>
+                        <th class="mon">Responsable de la acción de respuesta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Instalación de componentes</td>
+                        <td>Fallo</td>
+                        <td>Instalación incorrecta de componentes</td>
+                        <td>Mal funcionamiento o daño del equipo</td>
+                        <td>Dispositivo no reconocido o errores en el sistema</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>6</td>
+                        <td>Medio</td>
+                        <td>Medio</td>
+                        <td>Mitigación</td>
+                        <td>Seguir manuales y verificar compatibilidad antes de instalar</td>
+                        <td>Edwin René González</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Instalación de componentes</td>
+                        <td>Seguridad</td>
+                        <td>Manipulación sin medidas de seguridad</td>
+                        <td>Descarga electrostática y daño en el hardware</td>
+                        <td>Componentes dañados sin causa aparente</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>Alto</td>
+                        <td>Alto</td>
+                        <td>Mitigación</td>
+                        <td>Usar pulsera antiestática y manipular en superficies adecuadas</td>
+                        <td>Edwin René González</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Instalación de componentes</td>
+                        <td>Configuración</td>
+                        <td>Configuración errónea en el software</td>
+                        <td>Funcionamiento inadecuado</td>
+                        <td>Rendimiento bajo o inestabilidad del sistema</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>6</td>
+                        <td>Medio</td>
+                        <td>Medio</td>
+                        <td>Mitigación</td>
+                        <td>Actualizar drivers y revisar compatibilidad</td>
+                        <td>Edwin René González</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Instalación de componentes</td>
+                        <td>Disponibilidad</td>
+                        <td>Conexión a una fuente inadecuada</td>
+                        <td>Riesgo de sobrecarga o cortocircuito</td>
+                        <td>Olor a quemado o fallos eléctricos</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>Alto</td>
+                        <td>Alto</td>
+                        <td>Mitigación</td>
+                        <td>Usar fuentes de alimentación certificadas y reguladores de voltaje</td>
+                        <td>Edwin René González</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Instalación de componentes</td>
+                        <td>Compatibilidad</td>
+                        <td>Uso de piezas incompatibles</td>
+                        <td>Sistema inestable o sin funcionar</td>
+                        <td>Errores de arranque o pantalla azul</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>Alto</td>
+                        <td>Alto</td>
+                        <td>Mitigación</td>
+                        <td>Revisar especificaciones y compatibilidad antes de la instalación</td>
+                        <td>Edwin René González</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="mon">#</th>
+                        <th class="mon">Proceso</th>
+                        <th class="mon">Tipo de riesgo</th>
+                        <th class="mon">Riesgo</th>
+                        <th class="mon">Posible resultado (Entonces)</th>
+                        <th class="mon">Sintoma</th>
+                        <th class="mon">Probabilidad</th>
+                        <th class="mon">Impacto</th>
+                        <th class="mon">Nivel de prioridad</th>
+                        <th class="mon">Evaluación Valor</th>
+                        <th class="mon">Evaluación Nivel</th>
+                        <th class="mon">Estrategia</th>
+                        <th class="mon">Respuesta</th>
+                        <th class="mon">Responsable de la acción de respuesta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Instalación de sistemas de seguridad</td>
+                        <td>Configuración</td>
+                        <td>Ubicación incorrecta de las cámaras</td>
+                        <td>Ángulos ciegos y falta de cobertura</td>
+                        <td>Zonas sin monitoreo</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>6</td>
+                        <td>Medio</td>
+                        <td>Medio</td>
+                        <td>Mitigación</td>
+                        <td>Planificar estratégicamente la colocación de cámaras</td>
+                        <td>Edwin René González</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Instalación de sistemas de seguridad</td>
+                        <td>Seguridad</td>
+                        <td>Mala configuración de sensores</td>
+                        <td>Alarmas no detectan intrusos</td>
+                        <td>Falsos positivos o falta de alertas</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>Alto</td>
+                        <td>Alto</td>
+                        <td>Mitigación</td>
+                        <td>Ajustar sensibilidad y probar funcionamiento</td>
+                        <td>Edwin René González</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Instalación de sistemas de seguridad</td>
+                        <td>Conectividad</td>
+                        <td>Fallos en la conexión de los dispositivos</td>
+                        <td>Pérdida de monitoreo en tiempo real</td>
+                        <td>Cámaras o alarmas desconectadas</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>Alto</td>
+                        <td>Alto</td>
+                        <td>Mitigación</td>
+                        <td>Usar conexiones estables y configurar redes seguras</td>
+                        <td>Edwin René González</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Instalación de sistemas de seguridad</td>
+                        <td>Disponibilidad</td>
+                        <td>Falta de respaldo de energía</td>
+                        <td>Sistemas de seguridad inoperativos</td>
+                        <td>Desactivación total en cortes eléctricos</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>6</td>
+                        <td>Medio</td>
+                        <td>Medio</td>
+                        <td>Mitigación</td>
+                        <td>Implementar UPS o fuentes de energía de respaldo</td>
+                        <td>Edwin René González</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Instalación de sistemas de seguridad</td>
+                        <td>Seguridad</td>
+                        <td>Uso de credenciales débiles</td>
+                        <td>credenciales débiles</td>
+                        <td>Intrusiones o accesos no registrados</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>Alto</td>
+                        <td>Alto</td>
+                        <td>Mitigación</td>
+                        <td>Implementar autenticación fuerte y sistemas biométricos</td>
+                        <td>Edwin René González</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="mon">#</th>
+                        <th class="mon">Proceso</th>
+                        <th class="mon">Tipo de riesgo</th>
+                        <th class="mon">Riesgo</th>
+                        <th class="mon">Posible resultado (Entonces)</th>
+                        <th class="mon">Sintoma</th>
+                        <th class="mon">Probabilidad</th>
+                        <th class="mon">Impacto</th>
+                        <th class="mon">Nivel de prioridad</th>
+                        <th class="mon">Evaluación Valor</th>
+                        <th class="mon">Evaluación Nivel</th>
+                        <th class="mon">Estrategia</th>
+                        <th class="mon">Respuesta</th>
+                        <th class="mon">Responsable de la acción de respuesta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Mantenimiento</td>
+                        <td>Fallo</td>
+                        <td>No realizar mantenimiento periódico</td>
+                        <td>Aumento de fallos y reducción de vida útil</td>
+                        <td>Sobrecalentamiento, lentitud o fallos constantes</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>Alto</td>
+                        <td>Alto</td>
+                        <td>Mitigación</td>
+                        <td>Establecer un plan de mantenimiento regular</td>
+                        <td>Edwin René González</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Mantenimiento</td>
+                        <td>Seguridad</td>
+                        <td>Uso inadecuado de productos de limpieza</td>
+                        <td>Daño en circuitos o componentes</td>
+                        <td>Corrosión, manchas o fallos eléctricos</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>Alto</td>
+                        <td>Alto</td>
+                        <td>Mitigación</td>
+                        <td>Usar productos recomendados y evitar líquidos directos</td>
+                        <td>Edwin René González</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Mantenimiento</td>
+                        <td>Configuración</td>
+                        <td>No actualizar sistemas y programas</td>
+                        <td>Vulnerabilidades y fallos de compatibilidad</td>
+                        <td>Errores de funcionamiento y riesgos de seguridad</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>Alto</td>
+                        <td>Alto</td>
+                        <td>Mitigación</td>
+                        <td>Mantener software y firmware actualizados</td>
+                        <td>Edwin René González</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Mantenimiento</td>
+                        <td>Compatibilidad</td>
+                        <td>Instalar repuestos incompatibles</td>
+                        <td>Sistema inestable o no funcional</td>
+                        <td>Pantallazos azules o errores de hardware</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>Alto</td>
+                        <td>Alto</td>
+                        <td>Mitigación</td>
+                        <td>Verificar compatibilidad antes de la instalación</td>
+                        <td>Edwin René González</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Mantenimiento</td>
+                        <td>Disponibilidad</td>
+                        <td>No realizar copias de seguridad</td>
+                        <td>Pérdida irreversible de información</td>
+                        <td>Falta de acceso a archivos importantes</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>9</td>
+                        <td>Alto</td>
+                        <td>Alto</td>
+                        <td>Mitigación</td>
+                        <td>Implementar políticas de respaldo automático</td>
+                        <td>Edwin René González</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        
+    <p>🐱2024 Paw Match. Todos los derechos reservados.</p>
+</footer>
+
+
+</body>
+</html>
