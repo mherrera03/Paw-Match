@@ -3,98 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Nosotros</title>
+    <title>Sobre Nosotros - Paw Match</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="favicon.ico">
-    <style>
-        
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #ff6b6b;
-            padding: 15px;
-            color: white;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: rgb(10, 10, 10);
-            font-weight: bold;
-        }
-
-     
-        .sobre-nosotros {
-            text-align: center;
-            margin: 50px 0;
-        }
-
-        .cartas-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            position: relative;
-            height: 250px; 
-        }
-
-        .carta {
-            width: 160px;
-            height: 220px;
-            background: rgb(239, 238, 238);
-            border-radius: 10px;
-            padding: 15px;
-            text-align: center;
-            cursor: pointer;
-            box-shadow: 5px 5px 10px rgb(165, 149, 185);
-            position: relative;
-            opacity: 0;
-            transform: rotate(0deg) scale(0.5);
-            transition: transform 1s ease-out, opacity 1s ease-out, box-shadow 0.3s ease-in-out;
-        }
-
-        .carta:nth-child(1) { transform: rotate(-20deg) translateY(-50px) scale(0.5); }
-        .carta:nth-child(2) { transform: rotate(15deg) translateY(-60px) scale(0.5); }
-        .carta:nth-child(3) { transform: rotate(-10deg) translateY(-40px) scale(0.5); }
-
-        .cartas-container.iniciar .carta {
-            opacity: 1;
-            transform: rotate(0deg) translateY(0) scale(1);
-        }
-
-        .carta:hover {
-            transform: translateY(-10px) scale(1.05);
-            box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .info-oculta {
-            display: none;
-            margin-top: 20px;
-            padding: 20px;
-            background: rgb(239, 238, 238);
-            border-radius: 10px;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: justify;
-        }
-    </style>
+    
 </head>
+<style>
+
+    nav ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    nav ul li {
+        display: inline;
+        margin: 0 15px;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: rgb(10, 10, 10);
+        font-weight: bold;
+    }
+
+ 
+    .sobre-nosotros {
+        text-align: center;
+        margin: 69px 0;
+       
+    }
+
+   
+
+    .cartas-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        position: relative;
+        height: 250px; 
+    }
+
+    .carta {
+        width: 160px;
+        height: 220px;
+        border-radius: 10px;
+        padding: 15px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: 5px 5px 10px rgb(165, 149, 185);
+        position: relative;
+        opacity: 0;
+        transform: rotate(0deg) scale(0.5);
+        transition: transform 1s ease-out, opacity 1s ease-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .carta:nth-child(1) { transform: rotate(-20deg) translateY(-50px) scale(0.5); }
+    .carta:nth-child(2) { transform: rotate(15deg) translateY(-60px) scale(0.5); }
+    .carta:nth-child(3) { transform: rotate(-10deg) translateY(-40px) scale(0.5); }
+
+    .cartas-container.iniciar .carta {
+        opacity: 1;
+        transform: rotate(0deg) translateY(0) scale(1);
+    }
+
+    .carta:hover {
+        transform: translateY(-10px) scale(1.05);
+        box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .info-oculta {
+        display: none;
+        margin-top: 20px;
+        padding: 20px;
+        background: rgb(239, 238, 238);
+        border-radius: 10px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: justify;
+    }
+    .ini{
+background-color: #766a89;
+
+
+}
+
+.eje{
+background-color: #cc9dc0;
+
+}
+
+.mon{
+background-color: #9DB0CE;
+
+}
+</style>
 <body>
 
     <header>
@@ -113,15 +117,15 @@
     <section class="sobre-nosotros">
         <h2>Sobre Nosotros</h2>
         <div class="cartas-container">
-            <div class="carta" onclick="mostrarInfo('mariana')">
+            <div class="carta ini" onclick="mostrarInfo('mariana')">
                 <h3>Mariana Herrera Márquez</h3>
                 <p>Líder</p>
             </div>
-            <div class="carta" onclick="mostrarInfo('diego')">
+            <div class="carta eje" onclick="mostrarInfo('diego')">
                 <h3>Diego Alejandro Rodríguez Valencia</h3>
                 <p>Desarrollador Backend</p>
             </div>
-            <div class="carta" onclick="mostrarInfo('edwin')">
+            <div class="carta mon" onclick="mostrarInfo('edwin')">
                 <h3>Edwin René González Bonilla</h3>
                 <p>Desarrollador Backend</p>
             </div>
@@ -129,10 +133,6 @@
 
         <div id="info-miembro" class="info-oculta"></div>
     </section>
-
-    <footer>
-        <p>🐱2024 Paw Match. Todos los derechos reservados.</p>
-    </footer>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -161,6 +161,11 @@
             document.getElementById("info-miembro").style.display = "block";
         }
     </script>
+    <footer>
+        <p>🐱2024 Paw Match. Todos los derechos reservados.</p>
+    </footer>
+
+    
 
 </body>
 </html>
